@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF0C82E0-DCF6-7145-41A8-E7FFC5327B3A" name="ALSM_Seminar">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:36:39 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>48263CFB-1F40-8019-F0BF-2CC76AF97FF7</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+</Entity>

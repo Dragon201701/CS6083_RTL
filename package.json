@@ -53,15 +53,21 @@
     "@umijs/route-utils": "^1.0.33",
     "antd": "^4.15.0",
     "classnames": "^2.2.6",
+    "enquire-js": "^0.2.1",
+    "firebase": "^8.4.2",
+    "firestore": "^1.1.6",
     "lodash": "^4.17.11",
     "moment": "^2.25.3",
     "omit.js": "^2.0.2",
+    "rc-queue-anim": "^1.8.5",
+    "rc-tween-one": "^2.7.3",
     "react": "^16.14.0",
     "react-dev-inspector": "^1.1.1",
     "react-dom": "^17.0.0",
     "react-helmet-async": "^1.0.4",
     "umi": "^3.4.1",
-    "umi-request": "^1.0.8"
+    "umi-request": "^1.0.8",
+    "use-merge-value": "^1.0.2"
   },
   "devDependencies": {
     "@ant-design/pro-cli": "^1.0.28",

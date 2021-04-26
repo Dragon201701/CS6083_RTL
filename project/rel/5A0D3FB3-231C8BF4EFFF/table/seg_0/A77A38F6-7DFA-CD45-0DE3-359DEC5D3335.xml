@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A77A38F6-7DFA-CD45-0DE3-359DEC5D3335" name="ALSM_Book_Copy">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>D2AD107C-06EC-FB5F-711C-E1F51C1C502B</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Copy_ID" id="1473D076-7185-7D30-0281-7F19FC3B6629">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Identification number for each book copy]]></commentInRDBMS>
+<generatorID>E626964B-003B-D7A0-895C-70993BB234EC</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ISBN" id="F45CFED4-F8E5-9B1A-FE57-6F2838F8E2F3">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>2B3F7CE7-C334-35ED-6D4F-178549108C05</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0B4594F-3266-6349-A471-0B084D3B8C1C" referredColumn="837F0766-6922-0D46-7810-116D1C6E709A"/>
+</associations>
+</Column>
+<Column name="Status" id="5CA8D8C5-1F92-1750-679B-40525100071A">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[0 - on rent
+1 - avaliable]]></commentInRDBMS>
+<generatorID>FE85F38A-B639-A8C9-DAA7-A8CE76736588</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B3956040-29F0-1E66-F0B7-066B78EFDAE2" name="ALSM_Book_Copy_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>2C44451C-A3CE-EB3B-DA2C-9F6798F7279E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1473D076-7185-7D30-0281-7F19FC3B6629"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09D268FB-ABAF-48BF-9DDF-7BE56BECE663" name="ALSM_BOOK_FKv1">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>AD16615A-605B-E278-EA86-0C79142C7905</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F45CFED4-F8E5-9B1A-FE57-6F2838F8E2F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

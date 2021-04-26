@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="48263CFB-1F40-8019-F0BF-2CC76AF97FF7" name="ALSM_Event">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:38 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<generateDiscrimColumn>true</generateDiscrimColumn>
+<discriminatorAttributeID>8B698B7C-F077-5199-2310-7CE07D96C670</discriminatorAttributeID>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Event_ID" id="3FF70067-FF6E-1407-A31A-A28713E66A68">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Identifiaction number to each event]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Event_Name" id="456AC780-350D-6860-7A11-A9483A1D5410">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Event's Name]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Event_Type" id="8B698B7C-F077-5199-2310-7CE07D96C670">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Event Type: Seminar or Exhibition]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="StartDate" id="051DF58B-4D72-F892-996B-568E72D53FF7">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[The day and time event started]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="StopDate" id="9F1ACD63-E117-F8A6-BEB1-C83277085628">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[The day and time the event ended or is expected to end.]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TopicID" id="D2BAE5DE-830C-637D-7C12-7317F079A06E">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 20:22:03 UTC</createdTime>
+<generatorID>F051A2A8-4376-11C6-7BE8-54C1229C7FDD</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<referedAttribute>35329229-4BE1-2760-AF56-1E69869CD95C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E84CFCC6-608C-2AC4-F0BD-B2318E121C0C" name="Event PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:54 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3FF70067-FF6E-1407-A31A-A28713E66A68</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

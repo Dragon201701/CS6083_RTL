@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7E76E1C4-0E5D-0D38-166E-0CE83D04597E" containerWithKeyObject="49B8E586-5BB5-22DF-06BC-FCFCB120018E" localFKIndex="BF8FF7DA-9CE4-4EA5-88EB-6763EABB2FE2" name="ALSM_Individual_Sponsor_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>ED98DC1E-5F76-06E0-3F1D-98CA20AC2213</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<referredTableLongName>ALSM_Sponsor</referredTableLongName>
+<arc>D96F7FCC-B239-9ABB-BF0C-04954E75AF94</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4D2EA2C8-CC18-6370-2E28-871D2BAF1D8D</referredTableID>
+<keyObject>99317619-0FDA-2881-F3CA-CFA4020C9EB4</keyObject>
+<referredKeyID>99317619-0FDA-2881-F3CA-CFA4020C9EB4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SponID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorValue>ALSM_Individual</discriminatorValue>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

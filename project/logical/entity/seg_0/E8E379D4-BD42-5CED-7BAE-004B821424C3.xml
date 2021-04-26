@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E8E379D4-BD42-5CED-7BAE-004B821424C3" name="ALSM_StudyRoom">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:17:24 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="RoomID" id="058E8FC1-74FA-0573-A4D1-07E892149E4E">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:17:36 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique room id number ]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Capacity" id="63DA4BD8-B76B-9CA8-D7A3-FECADEA8C495">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:17:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maximum capacity of the room]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8CC51226-3566-2446-D9BE-1228F4CCD377" name="Study_Room PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:18:44 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>058E8FC1-74FA-0573-A4D1-07E892149E4E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

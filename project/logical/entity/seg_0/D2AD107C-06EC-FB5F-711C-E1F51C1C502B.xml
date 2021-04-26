@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D2AD107C-06EC-FB5F-711C-E1F51C1C502B" name="ALSM_Book_Copy">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 01:44:25 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Copy_ID" id="E626964B-003B-D7A0-895C-70993BB234EC">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 01:44:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Identification number for each book copy]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ISBN" id="2B3F7CE7-C334-35ED-6D4F-178549108C05">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:38:54 UTC</createdTime>
+<generatorID>AD16615A-605B-E278-EA86-0C79142C7905</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<referedAttribute>41507371-2307-EE24-7B20-F01595828ED8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Status" id="FE85F38A-B639-A8C9-DAA7-A8CE76736588">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 20:41:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[Status of the copy. Either available or on rent.]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2C44451C-A3CE-EB3B-DA2C-9F6798F7279E" name="Book_Copy PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 01:46:26 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E626964B-003B-D7A0-895C-70993BB234EC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB264E5A-A147-17E4-3709-E5AE637F4C1A" name="ALSM_Event">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>48263CFB-1F40-8019-F0BF-2CC76AF97FF7</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Event_ID" id="D8FC4D76-4987-A83F-7698-65B073081892">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Identifiaction number to each event]]></commentInRDBMS>
+<generatorID>3FF70067-FF6E-1407-A31A-A28713E66A68</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Event_Name" id="94097BF7-5CB9-CB5F-FE0F-7BE853A57533">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Event's Name]]></commentInRDBMS>
+<generatorID>456AC780-350D-6860-7A11-A9483A1D5410</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Event_Type" id="49036F28-AD3B-8DDD-819F-3F6E5F11E7C9">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Event Type: Seminar or Exhibition]]></commentInRDBMS>
+<generatorID>8B698B7C-F077-5199-2310-7CE07D96C670</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<constraintName>CH_INH_ALSM_Event</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="ALSM_Event" description="entity ALSM_Event"/>
+<valueDef value="ALSM_Exhibition" description="entity ALSM_Exhibition"/>
+<valueDef value="ALSM_Seminar" description="entity ALSM_Seminar"/>
+</listOfValues>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isDiscriminatorColumn>true</isDiscriminatorColumn>
+</Column>
+<Column name="StartDate" id="6A9108DC-6225-662C-746B-FF140CD2F4CC">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[The day and time event started]]></commentInRDBMS>
+<generatorID>051DF58B-4D72-F892-996B-568E72D53FF7</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="StopDate" id="DF559F81-4F75-75DF-881F-9BBEF692C974">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[The day and time the event ended or is expected to end.]]></commentInRDBMS>
+<generatorID>9F1ACD63-E117-F8A6-BEB1-C83277085628</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TopicID" id="7E4C56D9-AC02-5A15-E563-3F44F3E5D0BE">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>D2BAE5DE-830C-637D-7C12-7317F079A06E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2A078C94-A7E6-4D9F-7AB5-1968E9A4B2D8" referredColumn="BC42DCB1-0739-5918-9C29-FE5C60B7802F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="773E5B63-8979-8965-68B3-44E6C841DF14" name="ALSM_Event_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>E84CFCC6-608C-2AC4-F0BD-B2318E121C0C</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D8FC4D76-4987-A83F-7698-65B073081892"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B8DBF2F-B949-01A7-6855-476F443559AE" name="ALSM_EVENT_Topic_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>F051A2A8-4376-11C6-7BE8-54C1229C7FDD</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E4C56D9-AC02-5A15-E563-3F44F3E5D0BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

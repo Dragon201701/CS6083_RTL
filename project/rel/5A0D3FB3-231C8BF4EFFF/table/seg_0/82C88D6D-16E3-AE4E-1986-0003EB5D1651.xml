@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82C88D6D-16E3-AE4E-1986-0003EB5D1651" name="ALSM_Seminar">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>EF0C82E0-DCF6-7145-41A8-E7FFC5327B3A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Event_ID" id="B034EFBD-C6A1-6C93-5714-39CBE8C9C252">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique Identifiaction number to each event]]></commentInRDBMS>
+<generatorID>3FF70067-FF6E-1407-A31A-A28713E66A68</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF4FE6CC-9E31-7819-C93A-10E6ACFF3211" referredColumn="D8FC4D76-4987-A83F-7698-65B073081892"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="89637346-6114-F24D-5AE4-2AF4B481F0D3" name="ALSM_Seminar_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>E84CFCC6-608C-2AC4-F0BD-B2318E121C0C</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B034EFBD-C6A1-6C93-5714-39CBE8C9C252"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B15A240B-D99F-9423-1E74-08DB1842023D" name="ALSM_Seminar_Event_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>47AA3B89-BCB0-0340-0BF3-585DB516AAB6</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B034EFBD-C6A1-6C93-5714-39CBE8C9C252"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10C13364-045A-8F15-A527-AA4D7CC023FF" name="ALSM_CustRegistration">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>D2613298-0007-CE23-2285-1C4563A1712E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RegID" id="1AC93251-28F2-8E68-3560-6DAAEA83B0CC">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>5EC4929B-E9A3-7ED1-62D3-8663BBCF52B2</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Event_ID" id="4B37D07D-7EC6-28B6-B5F2-E105C5C3D1ED">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>BD19A6C5-E88A-03FE-BFA9-01AD603E4745</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="226A5F09-136B-D64D-08AD-32B11C79E2FF" referredColumn="C3BA5BE0-0778-E3D5-E7E2-DDE1A8F921A3"/>
+</associations>
+</Column>
+<Column name="CustID" id="B49D29C4-0836-FD1E-F9C1-EA65B7353A2D">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>43B73E3D-2252-2327-E8A1-83D851B00263</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86C5C21D-8CCB-A065-62CE-BA01007070EE" referredColumn="0BA9850B-54DD-A25A-E18C-49F65BD04833"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9509D46D-E1B3-F1A7-2DB0-6B1ED04299CC" name="ALSM_CustRegistration_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>CEB17653-F8E2-304A-75D9-50158E00257C</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AC93251-28F2-8E68-3560-6DAAEA83B0CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F4FC821F-A99A-8A0C-6594-282528595441" name="ALSM_Exhibition_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>9429E2B6-949B-9531-98AB-431253E86F26</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B37D07D-7EC6-28B6-B5F2-E105C5C3D1ED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="830D8D4D-7794-2AFB-DAD3-61C52DFE6D65" name="ALSM_Customer_FKv2">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>62ED8F5B-2023-ECCB-E025-4F916846A5BA</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B49D29C4-0836-FD1E-F9C1-EA65B7353A2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

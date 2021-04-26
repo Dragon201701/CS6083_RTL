@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A140E548-2A49-A2D4-F823-67DA2C309BA9" name="ALSM_Invoice">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>899A387E-31A5-F55A-2269-2A783F8954DB</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Inv_ID" id="25E62085-80C5-7BD8-14C2-BC4F1B51114F">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identification number for each invoice]]></commentInRDBMS>
+<generatorID>8B0C67B2-4B53-AAE3-3EFA-F43CCD676A00</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Inv_Date" id="011FDFAD-E439-B307-08B5-21C19555A35A">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[The date invoice was generated]]></commentInRDBMS>
+<generatorID>6D4E26C0-AAC0-7945-DCB4-A9E0A53491B1</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Amount" id="3FBA2015-72D4-B099-0931-785897EB6F9A">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[The total amount customer pays to the library]]></commentInRDBMS>
+<generatorID>FBBE38B2-0EEB-3855-5530-E3ED3E24AB6A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pay_Mthd" id="9557AF29-D794-C470-FF61-3697F1486811">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Method of payment used by customer]]></commentInRDBMS>
+<generatorID>24611B6D-EBB3-648E-A504-48044F1BD5D2</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bor_ID" id="59E3CFFF-3659-2B58-BD75-97E50E3CE502">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>07B30E4C-110C-DF1D-F0F6-14CA72672305</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D895A9ED-FA30-7DB0-7D95-4A638DD0C994" referredColumn="9CAA0E1F-75B8-7DE0-271C-153661A3E8A5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1CE94596-82FF-4358-3CA8-43B8C52D27EB" name="ALSM_Invoice_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>80E4FD88-3549-7B23-FBAF-230E21933BE2</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25E62085-80C5-7BD8-14C2-BC4F1B51114F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="92EF3E51-B2B8-09FE-6870-15A0FAF30928" name="ALSM_Rentals_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>7A35E563-7353-EDC9-BA8F-E3AFD5F787D4</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59E3CFFF-3659-2B58-BD75-97E50E3CE502"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

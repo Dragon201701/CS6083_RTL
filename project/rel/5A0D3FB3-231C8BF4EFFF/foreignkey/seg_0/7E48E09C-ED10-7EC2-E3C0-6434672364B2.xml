@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7E48E09C-ED10-7EC2-E3C0-6434672364B2" containerWithKeyObject="4CDBC541-D392-2A63-4AAF-78E447C88080" localFKIndex="59CB9A0B-F9DB-319C-9BE2-F218E0DF61EA" name="ALSM_Exhibition_Event_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>8121BD83-F419-5DB0-E2CF-393D099C75B2</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<referredTableLongName>ALSM_Event</referredTableLongName>
+<arc>7C7B9BE9-4038-2DB1-E0FB-BBCD569CCFE1</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FB264E5A-A147-17E4-3709-E5AE637F4C1A</referredTableID>
+<keyObject>773E5B63-8979-8965-68B3-44E6C841DF14</keyObject>
+<referredKeyID>773E5B63-8979-8965-68B3-44E6C841DF14</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Event_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorValue>ALSM_Exhibition</discriminatorValue>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

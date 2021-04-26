@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7D794D08-6AA8-9A7A-4101-3F330DBBE09E" name="ALSM_Sem_Sponsor">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>AF4818E0-B015-6B76-8852-7A5AA502AD22</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FundID" id="D915E984-A881-FF3B-3534-3B23CAD89CF3">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique ID rto identify all individual funding details]]></commentInRDBMS>
+<generatorID>AA8DD655-1DFA-FDDD-AA0A-F23880525235</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F_Amount" id="5011D968-AE58-E333-EEE6-F8FE6DBEAE2F">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Each sponsor's funding to each event]]></commentInRDBMS>
+<generatorID>D6459DDF-8160-364D-793D-97F644B0723D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SponID" id="1A6871EB-5E5A-276D-29A4-58F38A5809E1">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>B59CC172-BC12-0FE4-FDD8-4D8136FDCC2D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70420B17-C886-5DD2-8F56-0893B29D7CA3" referredColumn="045F2FCF-CE7A-EA44-CC8F-C41D979758FF"/>
+</associations>
+</Column>
+<Column name="Event_ID" id="BCB0C03F-D6FA-23B2-F2FD-3FADA675EAA4">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>771A804D-2CAD-07F5-1DC8-4F006CF7F7C0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="67973B51-9BD8-4044-C288-E51460EC09C3" referredColumn="B034EFBD-C6A1-6C93-5714-39CBE8C9C252"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E5224528-BDFA-C76A-3522-BE72F9792566" name="ALSM_Sem_Sponsor_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>6B1667B5-1148-6448-B2D3-D6918BFDBC2A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D915E984-A881-FF3B-3534-3B23CAD89CF3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="47868F39-6F0A-505B-3DA5-CCE55C9A3113" name="ALSM_Sponsor_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>77C5379B-3ED9-7AFB-EDD4-F21BF3B8233D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A6871EB-5E5A-276D-29A4-58F38A5809E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE214652-77B5-21FE-3830-C5EDDBFD232B" name="ALSM_Seminar_FKv1">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>D6746AC3-F764-3AEF-C103-5F58E29E964E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCB0C03F-D6FA-23B2-F2FD-3FADA675EAA4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

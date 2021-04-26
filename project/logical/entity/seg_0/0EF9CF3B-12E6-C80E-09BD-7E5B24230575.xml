@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0EF9CF3B-12E6-C80E-09BD-7E5B24230575" name="ALSM_Topic">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:23:29 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="TopicID" id="35329229-4BE1-2760-AF56-1E69869CD95C">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 20:17:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique number to identify topics]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="T_Name" id="BAB77F97-04F2-0C1B-6314-7BB1D9BAE9C6">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 20:22:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Topic name]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4BBE43BC-5398-A113-72F7-59AF8E056C13" name="Topic PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 20:22:01 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>35329229-4BE1-2760-AF56-1E69869CD95C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="99934B1A-D7E7-F030-7E79-280ADDA9CA09" name="ALSM_Aut_book">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>A6CA3730-EE2B-17DB-1E4B-9F8FC5B9AC9F</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="27679856-A626-22BA-CBCA-A6E0E6030852">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identification for each pair of one author and one book]]></commentInRDBMS>
+<generatorID>49F8E701-D690-6062-F566-7807CF244C7E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AutID" id="99747F55-76F9-1EFC-5F14-B5BE26C9E5FE">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>6C00B3C2-1E0F-880A-A8E6-1F3DE9139CEF</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54CF5172-21BF-27DB-20B6-53EF74172004" referredColumn="BC6D1D88-E13E-ABC7-B7CE-EF258B10BC34"/>
+</associations>
+</Column>
+<Column name="ISBN" id="727B634A-0EE7-9D74-8EA2-7C652E97122D">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>7EBC8244-D194-8A09-495E-2B32355B9E5E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3123E9DC-E1F7-51C1-7FE9-65B22CE3F016" referredColumn="837F0766-6922-0D46-7810-116D1C6E709A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="310B55F8-9755-132C-8EC1-97AEC2BBC6C4" name="ALSM_Aut_book_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>CC451A1F-B8C8-D278-69CA-456A67FC8982</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27679856-A626-22BA-CBCA-A6E0E6030852"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="403BBF30-459B-EF29-8E99-B3EE02B4736C" name="ALSM_Author_FKv1">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>66215794-9B14-A063-E4DA-2032E681FDD0</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99747F55-76F9-1EFC-5F14-B5BE26C9E5FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28C9A094-E1E2-D3C9-4456-0012D1643612" name="ALSM_Book_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>BD9DB1CE-C8EE-AA55-CFE2-A1BEC26F81FE</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="727B634A-0EE7-9D74-8EA2-7C652E97122D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

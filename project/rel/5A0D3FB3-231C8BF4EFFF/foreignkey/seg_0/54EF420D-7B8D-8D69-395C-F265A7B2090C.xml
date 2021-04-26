@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="54EF420D-7B8D-8D69-395C-F265A7B2090C" containerWithKeyObject="B63A5B85-FC76-C4A6-CED2-D6189E54C8B5" localFKIndex="39F409F1-7814-D11D-647D-1B42AE25AAA2" name="ALSM_Copy_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>C13DE2FE-40BD-C1A7-0DBE-247B120DCB4D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<referredTableLongName>ALSM_Book_Copy</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A77A38F6-7DFA-CD45-0DE3-359DEC5D3335</referredTableID>
+<keyObject>B3956040-29F0-1E66-F0B7-066B78EFDAE2</keyObject>
+<referredKeyID>B3956040-29F0-1E66-F0B7-066B78EFDAE2</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>Copy_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

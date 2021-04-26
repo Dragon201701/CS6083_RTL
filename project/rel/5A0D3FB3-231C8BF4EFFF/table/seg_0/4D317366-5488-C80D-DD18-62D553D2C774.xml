@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4D317366-5488-C80D-DD18-62D553D2C774" name="ALSM_StudyRoom">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>E8E379D4-BD42-5CED-7BAE-004B821424C3</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RoomID" id="B5AACF04-16DA-C875-AC84-B3F53B0F8613">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique room id number ]]></commentInRDBMS>
+<generatorID>058E8FC1-74FA-0573-A4D1-07E892149E4E</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Capacity" id="107CC1AF-DD30-62B6-0102-96B6FDDDB3B5">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maximum capacity of the room]]></commentInRDBMS>
+<generatorID>63DA4BD8-B76B-9CA8-D7A3-FECADEA8C495</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F70E32E9-3139-FC0D-D38E-B56BBC298A32" name="ALSM_StudyRoom_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>8CC51226-3566-2446-D9BE-1228F4CCD377</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5AACF04-16DA-C875-AC84-B3F53B0F8613"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

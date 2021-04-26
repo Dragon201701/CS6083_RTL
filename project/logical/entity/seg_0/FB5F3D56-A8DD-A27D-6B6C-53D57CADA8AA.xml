@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FB5F3D56-A8DD-A27D-6B6C-53D57CADA8AA" name="ALSM_Reservation">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:19:45 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Res_ID" id="61DFA50C-225D-D147-7865-33F611C25552">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:19:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identification number for each reservation]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Timeslot" id="70EF7EFB-7DEF-CBCD-9D66-C3D7F65101AC">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:20:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date and Time of the reservation]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CustID" id="E12BD8C8-9F87-C566-BB44-7F9231CEE265">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:45:13 UTC</createdTime>
+<generatorID>FA128F3D-9F35-03B8-C72A-052E2B76E19A</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>1E05C479-347A-FF95-946D-94DDCD227CD1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RoomID" id="8A1671F5-9F53-A493-2C3E-09A332CBC543">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:45:25 UTC</createdTime>
+<generatorID>5850B58C-51B2-0497-EDEA-161902803DB0</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<referedAttribute>058E8FC1-74FA-0573-A4D1-07E892149E4E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7C4766AF-76F0-3C23-E9BD-4A53DBCBEDB2" name="Reservations PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:20:12 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>61DFA50C-225D-D147-7865-33F611C25552</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

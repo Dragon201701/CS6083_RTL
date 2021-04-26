@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AF4818E0-B015-6B76-8852-7A5AA502AD22" name="ALSM_Sem_Sponsor">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:49:06 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="FundID" id="AA8DD655-1DFA-FDDD-AA0A-F23880525235">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 04:21:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique ID rto identify all individual funding details]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="F_Amount" id="D6459DDF-8160-364D-793D-97F644B0723D">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 00:49:16 UTC</createdTime>
+<commentInRDBMS><![CDATA[Each sponsor's funding to each event]]></commentInRDBMS>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SponID" id="B59CC172-BC12-0FE4-FDD8-4D8136FDCC2D">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:30:42 UTC</createdTime>
+<generatorID>77C5379B-3ED9-7AFB-EDD4-F21BF3B8233D</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<referedAttribute>F502EC69-3997-4A43-8DF3-AB339D88B3A6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Event_ID" id="771A804D-2CAD-07F5-1DC8-4F006CF7F7C0">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-05 19:31:00 UTC</createdTime>
+<generatorID>D6746AC3-F764-3AEF-C103-5F58E29E964E</generatorID>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<referedAttribute>3FF70067-FF6E-1407-A31A-A28713E66A68</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6B1667B5-1148-6448-B2D3-D6918BFDBC2A" name="Sem_Sponsor PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 04:22:13 UTC</createdTime>
+<ownerDesignName>PROJECT1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AA8DD655-1DFA-FDDD-AA0A-F23880525235</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

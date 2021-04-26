@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6C6D2CFF-A3BF-A8FC-AB0F-0845D46C3E97" name="ALSM_Organisation">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>B66E66CF-8544-2620-E35B-F58FD96458BD</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SponID" id="B41EA086-4150-89A0-0203-C6AD50C64581">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique ID number given to each sponsor]]></commentInRDBMS>
+<generatorID>F502EC69-3997-4A43-8DF3-AB339D88B3A6</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0ED3B452-0980-8434-71EF-4E6F2B896D60" referredColumn="045F2FCF-CE7A-EA44-CC8F-C41D979758FF"/>
+</associations>
+</Column>
+<Column name="Name" id="06690147-9640-679E-A697-21531F55D4CF">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Organisation's full name]]></commentInRDBMS>
+<generatorID>F39ABC34-D29F-1E6B-2BA8-FF021E1F9680</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84A15852-E7E5-8EA4-1961-196C9916523A" name="ALSM_Organisation_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>EB6A665B-B471-7E32-3CFB-BA7C76DC8765</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B41EA086-4150-89A0-0203-C6AD50C64581"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55812D16-DEB7-1D82-F01A-342E8C897740" name="ALSM_Organisation_ALSM_Sponsor_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>75EE658D-23D9-7613-6F3B-AD71D8AB002F</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B41EA086-4150-89A0-0203-C6AD50C64581"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

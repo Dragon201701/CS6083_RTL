@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="49B8E586-5BB5-22DF-06BC-FCFCB120018E" name="ALSM_Individual">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>861FAB75-D392-1098-E5DB-89E9F24CBDDA</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SponID" id="EEE5E6DF-F635-1716-55F3-306F52A50F27">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique ID number given to each sponsor]]></commentInRDBMS>
+<generatorID>F502EC69-3997-4A43-8DF3-AB339D88B3A6</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E76E1C4-0E5D-0D38-166E-0CE83D04597E" referredColumn="045F2FCF-CE7A-EA44-CC8F-C41D979758FF"/>
+</associations>
+</Column>
+<Column name="F_Name" id="BD093F83-C772-58C1-E0C1-11F05F19E5C8">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Individual sponsor's First Name	]]></commentInRDBMS>
+<generatorID>A8A87CFA-29E7-1C3C-F5A2-C47D295F4297</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="L_Name" id="77D822DC-22C7-9326-5DC4-732CDE055FB8">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Individual Sponsor's Last Name]]></commentInRDBMS>
+<generatorID>C44E22B2-9FB8-F2B1-9994-FE73CAD1D738</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6D4FB306-A5C3-0525-93BF-365457278D95" name="ALSM_Individual_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>EB6A665B-B471-7E32-3CFB-BA7C76DC8765</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EEE5E6DF-F635-1716-55F3-306F52A50F27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF8FF7DA-9CE4-4EA5-88EB-6763EABB2FE2" name="ALSM_Individual_Sponsor_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>ED98DC1E-5F76-06E0-3F1D-98CA20AC2213</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EEE5E6DF-F635-1716-55F3-306F52A50F27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B63A5B85-FC76-C4A6-CED2-D6189E54C8B5" name="ALSM_Rentals">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>6288339D-BD7E-6AFA-6602-4243E927F218</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Bor_ID" id="9CAA0E1F-75B8-7DE0-271C-153661A3E8A5">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique ID to each borrow activity]]></commentInRDBMS>
+<generatorID>B4FC1508-84D6-F0C8-70BF-16731F621CB5</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bor_Date" id="EFF6BF30-B826-7309-4C7C-C8C31612C04B">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[The date a copy of book was borrowed]]></commentInRDBMS>
+<generatorID>C74F15D4-E04A-F777-AA6F-BE5FEAF7EF4A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Exp_RDate" id="A7EC4E56-7170-8F31-541A-DDAE68CF6BD7">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[The date a copy of book is expected to be returned]]></commentInRDBMS>
+<generatorID>9437C374-A470-1428-FA6E-04E3C19FC58E</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Act_RDate" id="18CEAE0A-8149-9D02-8297-0F22C56C4659">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[The date a copy of book was actually returned]]></commentInRDBMS>
+<generatorID>D4C4C01D-22CE-11E4-8E05-37378819A94A</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Copy_ID" id="AFF1DB37-37BD-A63E-F163-7854FC7E3F13">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>03B7AD67-811B-65CB-A394-B43A67B73940</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54EF420D-7B8D-8D69-395C-F265A7B2090C" referredColumn="1473D076-7185-7D30-0281-7F19FC3B6629"/>
+</associations>
+</Column>
+<Column name="CustID" id="11F8FA67-68DE-5AEC-7C7D-A89EBE1EB285">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>B14D4DF1-3B6E-FFBD-FB07-CA50D2639F20</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CFC6F56D-E7E0-C4DD-F0DA-EA02A0EECF11" referredColumn="0BA9850B-54DD-A25A-E18C-49F65BD04833"/>
+</associations>
+</Column>
+<Column name="status" id="341FE34F-13A0-6D44-37FC-CA94353DAD45">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-06 23:21:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[0 - Borrowed
+1 - Returned
+2 - late]]></commentInRDBMS>
+<ownerDesignName>project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="45D253D7-9DC9-172C-CC92-152C0F8103C0" name="ALSM_Rentals_PK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:44 UTC</createdTime>
+<generatorID>FAD29FF3-4691-E495-94AC-9380D37F5314</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9CAA0E1F-75B8-7DE0-271C-153661A3E8A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39F409F1-7814-D11D-647D-1B42AE25AAA2" name="ALSM_Copy_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>C13DE2FE-40BD-C1A7-0DBE-247B120DCB4D</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AFF1DB37-37BD-A63E-F163-7854FC7E3F13"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8747F33F-2BC5-385E-E779-FC6BC1F78807" name="ALSM_Customer_FK">
+<createdBy>skshm</createdBy>
+<createdTime>2021-04-06 20:38:45 UTC</createdTime>
+<generatorID>8462BE55-8769-11EF-25DE-A0C3D2AA0D56</generatorID>
+<ownerDesignName>project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11F8FA67-68DE-5AEC-7C7D-A89EBE1EB285"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
