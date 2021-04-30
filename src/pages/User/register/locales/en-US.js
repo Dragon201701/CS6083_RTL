@@ -75,4 +75,6 @@ export default {
   'userandregister.option.B': 'Colleague B',
   'userandregister.option.C': 'Colleague C',
   'userandregister.navBar.lang': 'Languages',
+  'userandregister.fname.placeholder': 'Leagal First Name',
+  'userandregister.lname.placeholder': 'Leagal Last Name',
 };

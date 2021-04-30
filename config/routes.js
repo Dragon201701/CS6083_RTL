@@ -1,16 +1,20 @@
 export default [
+  // {
+  //   path: '/welcome',
+  //   layout: '../layouts/BlankLayout',
+  //   name: 'welcome',
+  //   component: './welcome'
+  // },
   {
     path: '/welcome',
-    layout: '../layouts/BlankLayout',
-    name: 'welcome',
-    component: './welcome'
-    // routes: [
-    //   {
-    //     path: '/welcome',
-    //     name: 'welcome',
-    //     component: './welcome',
-    //   }
-    // ]
+    component: '../layouts/BlankLayout',
+    routes: [
+      {
+        path: '/welcome',
+        name: 'welcome',
+        component: './welcome',
+      }
+    ]
   },
   {
     path: '/user',

@@ -8,8 +8,8 @@ var firebaseConfig = {
     projectId: "cs6083-project-a6044",
     storageBucket: "cs6083-project-a6044.appspot.com",
     messagingSenderId: "508616158192",
-    appId: "1:508616158192:web:9357613ff3bfabea750b35",
-    measurementId: "G-PLJPLHL4V8"
+    appId: "1:508616158192:web:f085d10bcc80c28f750b35",
+    measurementId: "G-DQYH0ELW66"
 };
 
 

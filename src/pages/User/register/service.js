@@ -1,6 +1,7 @@
 import request from 'umi-request';
 import firebase from 'firebase'
 require('firebase/auth')
+import mysql_con from '../../../../config/sql.js'
 //require('firebase/firestore');
 //import {Userdb} from '../../../../config/firebase'
 
@@ -11,6 +12,7 @@ export async function fakeRegister(params) {
   });
 }
 export async function Register(params){
+  console.log("register params: ", params)
   console.log('Firebase Create user with email: ', params.mail, ' passowrd: ', params.password)
   let status = 'ok', currentAuthority = 'user', message = 'Success'
   let registerPromise = firebase.auth().createUserWithEmailAndPassword(params.mail, params.password).catch(function(error) {
@@ -24,8 +26,21 @@ export async function Register(params){
   });
   const ret = await registerPromise
   var user = firebase.auth().currentUser;
-  console.log('Firestore user datebase: ', Userdb)
+  //console.log('Firestore user datebase: ', Userdb)
   if (status == 'ok'){
+    console.log(mysql_con)
+    mysql_con.connect((err) => {
+      if (err){
+        console.log('Mysql error before connection at register: ', err)
+      }
+      console.log('Mysql connected at register page.')
+      mysql_con.query("insert into customers () values ()", (err, result) =>{
+        if(err) {
+          console.log("Mysql error after connection at register page: ", err)
+        }
+        console.log('Mysql customer table value inserted! Result: ', result)
+      })
+    })
     /*let dbregisterPromise = Userdb.doc(user.uid).set({
       name: '',
       email: user.email,

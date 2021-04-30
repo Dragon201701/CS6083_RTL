@@ -1,6 +1,6 @@
 alter table ALSM_Author
 add constraint chk_author_email
-check (a_email LIKE '%_@__%.__%');
+check (aemail LIKE '%_@__%.__%');
 alter table ALSM_Book_Copy
 add constraint chk_copy_status
 check (status = 0 or status = 1);
@@ -9,16 +9,16 @@ add constraint chk_event_enddate
 check (stopdate >= startdate);
 alter table ALSM_Sem_Sponsor
 add constraint chk_seminar_sponsor_fund
-check (F_Amount >= 0);
+check (FAmount >= 0);
 alter table alsm_customer
 add constraint chk_customer_idtype 
-check (id_type = 'passport' or id_type = 'license' or id_type = 'ssn');
+check (custid_type = 0 or custid_type = 1 or custid_type = 2);
 alter table alsm_customer
 add constraint chk_customer_email
-check (c_email LIKE '%_@__%.__%');
+check (cemail LIKE '%_@__%.__%');
 alter table alsm_customer
 add constraint chk_customer_phone
-check (LENGTH(contact) = 10);
+check (LENGTH(cphone) = 10);
 alter table ALSM_Invoice 
 add constraint chk_invoice_amount 
 check (amount >= 0);

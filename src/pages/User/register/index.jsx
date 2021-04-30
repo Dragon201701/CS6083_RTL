@@ -1,4 +1,4 @@
-import { Form, Button, Col, Input, Popover, Progress, Row, Select, message } from 'antd';
+import { Form, Button, Col, Input, Popover, Progress, Row, Select, message, Radio } from 'antd';
 import React, { useState, useEffect } from 'react';
 import { Link, connect, history, FormattedMessage, formatMessage } from 'umi';
 import styles from './style.less';
@@ -33,6 +33,7 @@ const Register = ({ submitting, dispatch, userAndregister }) => {
   const [visible, setvisible] = useState(false);
   const [prefix, setprefix] = useState('86');
   const [popover, setpopover] = useState(false);
+  const [custid_type, setcustid_type] = useState(0);
   const confirmDirty = false;
   let interval;
   const [form] = Form.useForm();
@@ -52,7 +53,6 @@ const Register = ({ submitting, dispatch, userAndregister }) => {
         },
       });
     }
-    
   }, [userAndregister]);
   useEffect(
     () => () => {
@@ -140,6 +140,14 @@ const Register = ({ submitting, dispatch, userAndregister }) => {
 
   const changePrefix = (value) => {
     setprefix(value);
+  };
+
+  const custid_type_options = [
+    { label: 'Driver License', value: 0}, {label: 'SSN', value: 1},  {label: 'Passport', value: 2}
+  ]
+  const custid_type_onChange = e => {
+    console.log('radio4 checked', e.target.value);
+    setcustid_type(e.target.value)
   };
 
   const renderPasswordProgress = () => {
@@ -263,6 +271,54 @@ const Register = ({ submitting, dispatch, userAndregister }) => {
             placeholder={formatMessage({
               id: 'userandregister.confirm-password.placeholder',
             })}
+          />
+        </FormItem>
+
+        <FormItem
+          name="cfname"
+        >
+          <Input
+            size="large"
+            placeholder={formatMessage({
+              id: 'userandregister.fname.placeholder',
+            })}
+          />
+        </FormItem>
+        <FormItem
+          name="clname"
+        >
+          <Input
+            size="large"
+            placeholder={formatMessage({
+              id: 'userandregister.lname.placeholder',
+            })}
+          />
+        </FormItem>
+        <FormItem
+          name="cphone"
+        >
+          <Input
+            size="large"
+            placeholder={formatMessage({
+              id: 'userandregister.phone-number.placeholder',
+            })}
+          />
+        </FormItem>
+
+        <Radio.Group
+          options={custid_type_options}
+          onChange={custid_type_onChange}
+          value={custid_type}
+          optionType="button"
+          buttonStyle="solid"
+        />
+
+        <FormItem
+          name="custid_num"
+        >
+          <Input
+            size="large"
+            placeholder={"ID number"}
           />
         </FormItem>
         

@@ -22,28 +22,27 @@ COMMENT ON COLUMN alsm_aut_book.id IS
 ALTER TABLE alsm_aut_book ADD CONSTRAINT alsm_aut_book_pk PRIMARY KEY ( id );
 
 CREATE TABLE alsm_aut_invite (
-    inv_id    BIGINT NOT NULL COMMENT 'Unique Invitation Identification number',
+    invid    BIGINT NOT NULL COMMENT 'Unique Invitation Identification number',
     autid     BIGINT,
-    event_id  BIGINT
+    eventid  BIGINT
 );
 
 /* Moved to CREATE TABLE
 COMMENT ON COLUMN alsm_aut_invite.inv_id IS
     'Unique Invitation Identification number'; */
 
-ALTER TABLE alsm_aut_invite ADD CONSTRAINT alsm_aut_invite_pk PRIMARY KEY ( inv_id );
+ALTER TABLE alsm_aut_invite ADD CONSTRAINT alsm_aut_invite_pk PRIMARY KEY ( invid );
 
 CREATE TABLE alsm_author (
     autid     BIGINT NOT NULL COMMENT 'Unique ID number for each each author',
-    a_fname   VARCHAR(20) NOT NULL COMMENT 'Author''s First Name
-',
-    a_lname   VARCHAR(20) NOT NULL COMMENT 'Author''s Last Name',
-    house_no  VARCHAR(5) NOT NULL COMMENT 'Author''s Residential House Number',
+    afname   VARCHAR(20) NOT NULL COMMENT 'Author''s First Name',
+    alname   VARCHAR(20) NOT NULL COMMENT 'Author''s Last Name',
+    house  VARCHAR(5) NOT NULL COMMENT 'Author''s Residential House Number',
     street    VARCHAR(20) NOT NULL COMMENT 'Author''s Street Address',
     city      VARCHAR(20) NOT NULL COMMENT 'Author''s city',
     state     VARCHAR(20) NOT NULL COMMENT 'Author''s living State name',
     zipcode   INT NOT NULL COMMENT 'Author''s residential zipcode',
-    a_email   VARCHAR(30) NOT NULL COMMENT 'Author''s email ID'
+    aemail   VARCHAR(30) NOT NULL COMMENT 'Author''s email ID'
 );
 
 /* Moved to CREATE TABLE
@@ -102,7 +101,7 @@ COMMENT ON COLUMN alsm_book.bname IS
 ALTER TABLE alsm_book ADD CONSTRAINT alsm_book_pk PRIMARY KEY ( isbn );
 
 CREATE TABLE alsm_book_copy (
-    copy_id  BIGINT NOT NULL COMMENT 'Unique Identification number for each book copy',
+    copyid  BIGINT NOT NULL COMMENT 'Unique Identification number for each book copy',
     isbn     BIGINT NOT NULL,
     status   VARCHAR(1) NOT NULL COMMENT 'Status of the copy. Either available or on rent.'
 );
@@ -115,16 +114,17 @@ COMMENT ON COLUMN alsm_book_copy.copy_id IS
 COMMENT ON COLUMN alsm_book_copy.status IS
     'Status of the copy. Either available or on rent.'; */
 
-ALTER TABLE alsm_book_copy ADD CONSTRAINT alsm_book_copy_pk PRIMARY KEY ( copy_id );
+ALTER TABLE alsm_book_copy ADD CONSTRAINT alsm_book_copy_pk PRIMARY KEY ( copyid );
 
 CREATE TABLE alsm_customer (
     custid   INT NOT NULL COMMENT 'Unique ID given to each customer',
-    c_fname  VARCHAR(20) NOT NULL COMMENT 'Customer''s first name',
-    c_lname  VARCHAR(20) NOT NULL COMMENT 'Customer''s Last Name',
-    contact  BIGINT NOT NULL COMMENT 'Customer''s phone number',
-    c_email  VARCHAR(30) NOT NULL COMMENT 'Customer''s Email ID',
-    id_type  VARCHAR(10) NOT NULL COMMENT 'Type of Identification document. Passport or SSN or Driver License.',
-    id_num   BIGINT NOT NULL COMMENT 'Unique number given to each ID document'
+    cfname  VARCHAR(20) NOT NULL COMMENT 'Customer''s first name',
+    clname  VARCHAR(20) NOT NULL COMMENT 'Customer''s Last Name',
+    crole  VARCHAR(20) NOT NULL COMMENT 'Role of the user, user by default user and admin for admin acount',
+    cphone  BIGINT NOT NULL COMMENT 'Customer''s phone number',
+    cemail  VARCHAR(30) NOT NULL COMMENT 'Customer''s Email ID',
+    custid_type  INT NOT NULL NOT NULL COMMENT 'Type of Identification document. 0 Driver License, 1 SSN or 2 Passport.',
+    custid_num   VARCHAR(20) NOT NULL COMMENT 'Unique number given to each ID document'
 );
 
 /* Moved to CREATE TABLE
@@ -159,23 +159,23 @@ ALTER TABLE alsm_customer ADD CONSTRAINT alsm_customer_pk PRIMARY KEY ( custid )
 
 CREATE TABLE alsm_custregistration (
     regid     BIGINT NOT NULL,
-    event_id  BIGINT NOT NULL,
+    eventid  BIGINT NOT NULL,
     custid    INT
 );
 
 ALTER TABLE alsm_custregistration ADD CONSTRAINT alsm_custregistration_pk PRIMARY KEY ( regid );
 
 CREATE TABLE alsm_event (
-    event_id    BIGINT NOT NULL COMMENT 'Unique Identifiaction number to each event',
-    event_name  VARCHAR(20) NOT NULL COMMENT 'Event''s Name',
-    event_type  VARCHAR(15) NOT NULL COMMENT 'Event Type: Seminar or Exhibition',
+    eventid    BIGINT NOT NULL COMMENT 'Unique Identifiaction number to each event',
+    ename  VARCHAR(20) NOT NULL COMMENT 'Event''s Name',
+    etype  VARCHAR(15) NOT NULL COMMENT 'Event Type: Seminar or Exhibition',
     startdate   DATETIME NOT NULL COMMENT 'The day and time event started',
     stopdate    DATETIME NOT NULL COMMENT 'The day and time the event ended or is expected to end.',
     topicid     BIGINT NOT NULL
 );
 
 ALTER TABLE alsm_event
-    ADD CONSTRAINT ch_inh_alsm_event CHECK ( event_type IN ( 'ALSM_Event', 'ALSM_Exhibition', 'ALSM_Seminar' ) );
+    ADD CONSTRAINT ch_inh_alsm_event CHECK ( etype IN ( 'ALSM_Event', 'ALSM_Exhibition', 'ALSM_Seminar' ) );
 
 /* Moved to CREATE TABLE
 COMMENT ON COLUMN alsm_event.event_id IS
@@ -197,10 +197,10 @@ COMMENT ON COLUMN alsm_event.startdate IS
 COMMENT ON COLUMN alsm_event.stopdate IS
     'The day and time the event ended or is expected to end.'; */
 
-ALTER TABLE alsm_event ADD CONSTRAINT alsm_event_pk PRIMARY KEY ( event_id );
+ALTER TABLE alsm_event ADD CONSTRAINT alsm_event_pk PRIMARY KEY ( eventid );
 
 CREATE TABLE alsm_exhibition (
-    event_id      BIGINT NOT NULL COMMENT 'Unique Identifiaction number to each event',
+    eventid      BIGINT NOT NULL COMMENT 'Unique Identifiaction number to each event',
     exb_expenses  BIGINT NOT NULL COMMENT 'Expenses of the exhibition'
 );
 
@@ -212,7 +212,7 @@ COMMENT ON COLUMN alsm_exhibition.event_id IS
 COMMENT ON COLUMN alsm_exhibition.exb_expenses IS
     'Expenses of the exhibition'; */
 
-ALTER TABLE alsm_exhibition ADD CONSTRAINT alsm_exhibition_pk PRIMARY KEY ( event_id );
+ALTER TABLE alsm_exhibition ADD CONSTRAINT alsm_exhibition_pk PRIMARY KEY ( eventid );
 
 CREATE TABLE alsm_individual (
     sponid  BIGINT NOT NULL COMMENT 'Unique ID number given to each sponsor',
@@ -235,11 +235,11 @@ COMMENT ON COLUMN alsm_individual.l_name IS
 ALTER TABLE alsm_individual ADD CONSTRAINT alsm_individual_pk PRIMARY KEY ( sponid );
 
 CREATE TABLE alsm_invoice (
-    inv_id    BIGINT NOT NULL COMMENT 'Unique identification number for each invoice',
-    inv_date  DATETIME COMMENT 'The date invoice was generated',
+    invid    BIGINT NOT NULL COMMENT 'Unique identification number for each invoice',
+    invdate  DATETIME COMMENT 'The date invoice was generated',
     amount    DECIMAL(8, 2) COMMENT 'The total amount customer pays to the library',
     pay_mthd  VARCHAR(10) COMMENT 'Method of payment used by customer',
-    bor_id    BIGINT
+    borid    BIGINT
 );
 
 /* Moved to CREATE TABLE
@@ -258,7 +258,7 @@ COMMENT ON COLUMN alsm_invoice.amount IS
 COMMENT ON COLUMN alsm_invoice.pay_mthd IS
     'Method of payment used by customer'; */
 
-ALTER TABLE alsm_invoice ADD CONSTRAINT alsm_invoice_pk PRIMARY KEY ( inv_id );
+ALTER TABLE alsm_invoice ADD CONSTRAINT alsm_invoice_pk PRIMARY KEY ( invid );
 
 CREATE TABLE alsm_organisation (
     sponid  BIGINT NOT NULL COMMENT 'Unique ID number given to each sponsor',
@@ -276,11 +276,11 @@ COMMENT ON COLUMN alsm_organisation.name IS
 ALTER TABLE alsm_organisation ADD CONSTRAINT alsm_organisation_pk PRIMARY KEY ( sponid );
 
 CREATE TABLE alsm_rentals (
-    bor_id     BIGINT NOT NULL COMMENT 'Unique ID to each borrow activity',
+    borid     BIGINT NOT NULL COMMENT 'Unique ID to each borrow activity',
     bor_date   DATETIME NOT NULL COMMENT 'The date a copy of book was borrowed',
     exp_rdate  DATETIME NOT NULL COMMENT 'The date a copy of book is expected to be returned',
     act_rdate  DATETIME COMMENT 'The date a copy of book was actually returned',
-    copy_id    BIGINT,
+    copyid    BIGINT,
     custid     INT,
     status     INT
 );
@@ -301,10 +301,10 @@ COMMENT ON COLUMN alsm_rentals.exp_rdate IS
 COMMENT ON COLUMN alsm_rentals.act_rdate IS
     'The date a copy of book was actually returned'; */
 
-ALTER TABLE alsm_rentals ADD CONSTRAINT alsm_rentals_pk PRIMARY KEY ( bor_id );
+ALTER TABLE alsm_rentals ADD CONSTRAINT alsm_rentals_pk PRIMARY KEY ( borid );
 
 CREATE TABLE alsm_reservation (
-    res_id    BIGINT NOT NULL COMMENT 'Unique identification number for each reservation',
+    resid    BIGINT NOT NULL COMMENT 'Unique identification number for each reservation',
     timeslot  DATETIME NOT NULL COMMENT 'Date and Time of the reservation',
     custid    INT,
     roomid    BIGINT NOT NULL
@@ -318,13 +318,13 @@ COMMENT ON COLUMN alsm_reservation.res_id IS
 COMMENT ON COLUMN alsm_reservation.timeslot IS
     'Date and Time of the reservation'; */
 
-ALTER TABLE alsm_reservation ADD CONSTRAINT alsm_reservation_pk PRIMARY KEY ( res_id );
+ALTER TABLE alsm_reservation ADD CONSTRAINT alsm_reservation_pk PRIMARY KEY ( resid );
 
 CREATE TABLE alsm_sem_sponsor (
     fundid    BIGINT NOT NULL COMMENT 'Unique ID rto identify all individual funding details',
-    f_amount  DECIMAL(8, 2) NOT NULL COMMENT 'Each sponsor''s funding to each event',
+    famount  DECIMAL(8, 2) NOT NULL COMMENT 'Each sponsor''s funding to each event',
     sponid    BIGINT NOT NULL,
-    event_id  BIGINT NOT NULL
+    eventid  BIGINT NOT NULL
 );
 
 /* Moved to CREATE TABLE
@@ -338,14 +338,14 @@ COMMENT ON COLUMN alsm_sem_sponsor.f_amount IS
 ALTER TABLE alsm_sem_sponsor ADD CONSTRAINT alsm_sem_sponsor_pk PRIMARY KEY ( fundid );
 
 CREATE TABLE alsm_seminar (
-    event_id BIGINT NOT NULL COMMENT 'Unique Identifiaction number to each event'
+    eventid BIGINT NOT NULL COMMENT 'Unique Identifiaction number to each event'
 );
 
 /* Moved to CREATE TABLE
 COMMENT ON COLUMN alsm_seminar.event_id IS
     'Unique Identifiaction number to each event'; */
 
-ALTER TABLE alsm_seminar ADD CONSTRAINT alsm_seminar_pk PRIMARY KEY ( event_id );
+ALTER TABLE alsm_seminar ADD CONSTRAINT alsm_seminar_pk PRIMARY KEY ( eventid );
 
 CREATE TABLE alsm_sponsor (
     sponid    BIGINT NOT NULL COMMENT 'Unique ID number given to each sponsor',
@@ -382,7 +382,7 @@ ALTER TABLE alsm_studyroom ADD CONSTRAINT alsm_studyroom_pk PRIMARY KEY ( roomid
 
 CREATE TABLE alsm_topic (
     topicid  BIGINT NOT NULL COMMENT 'Unique number to identify topics',
-    t_name   VARCHAR(20) NOT NULL COMMENT 'Topic name'
+    tname   VARCHAR(20) NOT NULL COMMENT 'Topic name'
 );
 
 /* Moved to CREATE TABLE
@@ -412,8 +412,8 @@ ALTER TABLE alsm_book_copy
         REFERENCES alsm_book ( isbn );
 
 ALTER TABLE alsm_rentals
-    ADD CONSTRAINT alsm_copy_fk FOREIGN KEY ( copy_id )
-        REFERENCES alsm_book_copy ( copy_id );
+    ADD CONSTRAINT alsm_copy_fk FOREIGN KEY ( copyid )
+        REFERENCES alsm_book_copy ( copyid );
 
 ALTER TABLE alsm_rentals
     ADD CONSTRAINT alsm_customer_fk FOREIGN KEY ( custid )
@@ -432,12 +432,12 @@ ALTER TABLE alsm_event
         REFERENCES alsm_topic ( topicid );
 
 ALTER TABLE alsm_exhibition
-    ADD CONSTRAINT alsm_exhibition_event_fk FOREIGN KEY ( event_id )
-        REFERENCES alsm_event ( event_id );
+    ADD CONSTRAINT alsm_exhibition_event_fk FOREIGN KEY ( eventid )
+        REFERENCES alsm_event ( eventid );
 
 ALTER TABLE alsm_custregistration
-    ADD CONSTRAINT alsm_exhibition_fk FOREIGN KEY ( event_id )
-        REFERENCES alsm_exhibition ( event_id );
+    ADD CONSTRAINT alsm_exhibition_fk FOREIGN KEY ( eventid )
+        REFERENCES alsm_exhibition ( eventid );
 
 ALTER TABLE alsm_individual
     ADD CONSTRAINT alsm_individual_sponsor_fk FOREIGN KEY ( sponid )
@@ -449,21 +449,21 @@ ALTER TABLE alsm_organisation
         REFERENCES alsm_sponsor ( sponid );
 
 ALTER TABLE alsm_invoice
-    ADD CONSTRAINT alsm_rentals_fk FOREIGN KEY ( bor_id )
-        REFERENCES alsm_rentals ( bor_id )
+    ADD CONSTRAINT alsm_rentals_fk FOREIGN KEY ( borid )
+        REFERENCES alsm_rentals ( borid )
             ON DELETE CASCADE;
 
 ALTER TABLE alsm_seminar
-    ADD CONSTRAINT alsm_seminar_event_fk FOREIGN KEY ( event_id )
-        REFERENCES alsm_event ( event_id );
+    ADD CONSTRAINT alsm_seminar_event_fk FOREIGN KEY ( eventid )
+        REFERENCES alsm_event ( eventid );
 
 ALTER TABLE alsm_aut_invite
-    ADD CONSTRAINT alsm_seminar_fk FOREIGN KEY ( event_id )
-        REFERENCES alsm_seminar ( event_id );
+    ADD CONSTRAINT alsm_seminar_fk FOREIGN KEY ( eventid )
+        REFERENCES alsm_seminar ( eventid );
 
 ALTER TABLE alsm_sem_sponsor
-    ADD CONSTRAINT alsm_seminar_fkv1 FOREIGN KEY ( event_id )
-        REFERENCES alsm_seminar ( event_id );
+    ADD CONSTRAINT alsm_seminar_fkv1 FOREIGN KEY ( eventid )
+        REFERENCES alsm_seminar ( eventid );
 
 ALTER TABLE alsm_sem_sponsor
     ADD CONSTRAINT alsm_sponsor_fk FOREIGN KEY ( sponid )
@@ -490,7 +490,7 @@ BEGIN
     FROM
         alsm_event a
     WHERE
-        a.event_id = :new.event_id;
+        a.eventid = :new.eventid;
 
     IF ( d IS NULL OR d <> 'ALSM_Seminar' ) THEN
         raise_application_error(-20223,
@@ -518,7 +518,7 @@ BEGIN
     FROM
         alsm_event a
     WHERE
-        a.event_id = :new.event_id;
+        a.eventid = :new.eventid;
 
     IF ( d IS NULL OR d <> 'ALSM_Exhibition' ) THEN
         raise_application_error(-20223,
