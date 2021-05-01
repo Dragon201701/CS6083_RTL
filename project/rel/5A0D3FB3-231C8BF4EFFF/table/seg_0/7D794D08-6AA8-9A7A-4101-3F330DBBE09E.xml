@@ -3,7 +3,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>AF4818E0-B015-6B76-8852-7A5AA502AD22</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -13,7 +13,7 @@
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID rto identify all individual funding details]]></commentInRDBMS>
 <generatorID>AA8DD655-1DFA-FDDD-AA0A-F23880525235</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -21,12 +21,12 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="F_Amount" id="5011D968-AE58-E333-EEE6-F8FE6DBEAE2F">
+<Column name="FAmount" id="5011D968-AE58-E333-EEE6-F8FE6DBEAE2F">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Each sponsor's funding to each event]]></commentInRDBMS>
 <generatorID>D6459DDF-8160-364D-793D-97F644B0723D</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT043</logicalDatatype>
@@ -39,7 +39,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>B59CC172-BC12-0FE4-FDD8-4D8136FDCC2D</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -51,11 +51,11 @@
 <colAssociation fkAssociation="70420B17-C886-5DD2-8F56-0893B29D7CA3" referredColumn="045F2FCF-CE7A-EA44-CC8F-C41D979758FF"/>
 </associations>
 </Column>
-<Column name="Event_ID" id="BCB0C03F-D6FA-23B2-F2FD-3FADA675EAA4">
+<Column name="EventID" id="BCB0C03F-D6FA-23B2-F2FD-3FADA675EAA4">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>771A804D-2CAD-07F5-1DC8-4F006CF7F7C0</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -73,7 +73,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>6B1667B5-1148-6448-B2D3-D6918BFDBC2A</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -81,22 +81,22 @@
 <colUsage columnID="D915E984-A881-FF3B-3534-3B23CAD89CF3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="47868F39-6F0A-505B-3DA5-CCE55C9A3113" name="ALSM_Sponsor_FK">
+<ind_PK_UK id="47868F39-6F0A-505B-3DA5-CCE55C9A3113" name="ALSM_Sem_Sponsor_ALSM_Sponsor_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>77C5379B-3ED9-7AFB-EDD4-F21BF3B8233D</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="1A6871EB-5E5A-276D-29A4-58F38A5809E1"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="FE214652-77B5-21FE-3830-C5EDDBFD232B" name="ALSM_Seminar_FKv1">
+<ind_PK_UK id="FE214652-77B5-21FE-3830-C5EDDBFD232B" name="ALSM_Sem_Sponsor_ALSM_Seminar_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>D6746AC3-F764-3AEF-C103-5F58E29E964E</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

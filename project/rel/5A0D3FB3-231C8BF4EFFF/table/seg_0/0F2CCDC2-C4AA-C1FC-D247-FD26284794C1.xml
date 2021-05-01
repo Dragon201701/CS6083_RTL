@@ -3,17 +3,17 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>FB5F3D56-A8DD-A27D-6B6C-53D57CADA8AA</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Res_ID" id="79D9AB2A-E51F-30C6-72C0-14C6F6C5578D">
+<Column name="ResID" id="79D9AB2A-E51F-30C6-72C0-14C6F6C5578D">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique identification number for each reservation]]></commentInRDBMS>
 <generatorID>61DFA50C-225D-D147-7865-33F611C25552</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -26,7 +26,7 @@
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Date and Time of the reservation]]></commentInRDBMS>
 <generatorID>70EF7EFB-7DEF-CBCD-9D66-C3D7F65101AC</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
@@ -37,7 +37,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>E12BD8C8-9F87-C566-BB44-7F9231CEE265</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -54,7 +54,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>8A1671F5-9F53-A493-2C3E-09A332CBC543</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -72,7 +72,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>7C4766AF-76F0-3C23-E9BD-4A53DBCBEDB2</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -80,22 +80,22 @@
 <colUsage columnID="79D9AB2A-E51F-30C6-72C0-14C6F6C5578D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="21B5EFD9-32D5-453C-6E63-898C98711EAA" name="ALSM_Customer_FKv1">
+<ind_PK_UK id="21B5EFD9-32D5-453C-6E63-898C98711EAA" name="ALSM_Reservation_ALSM_Customer_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>FA128F3D-9F35-03B8-C72A-052E2B76E19A</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="57BF34E5-5E0E-8E5C-E1B0-D7912AC4B867"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="4B8015FF-D5C8-0720-6FBF-FD8AFD620182" name="ALSM_StudyRoom_FK">
+<ind_PK_UK id="4B8015FF-D5C8-0720-6FBF-FD8AFD620182" name="ALSM_Reservation_ALSM_StudyRoom_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>5850B58C-51B2-0497-EDEA-161902803DB0</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

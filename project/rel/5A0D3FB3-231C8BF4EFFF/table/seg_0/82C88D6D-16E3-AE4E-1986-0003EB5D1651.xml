@@ -3,17 +3,17 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>EF0C82E0-DCF6-7145-41A8-E7FFC5327B3A</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Event_ID" id="B034EFBD-C6A1-6C93-5714-39CBE8C9C252">
+<Column name="EventID" id="B034EFBD-C6A1-6C93-5714-39CBE8C9C252">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique Identifiaction number to each event]]></commentInRDBMS>
 <generatorID>3FF70067-FF6E-1407-A31A-A28713E66A68</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -30,7 +30,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>E84CFCC6-608C-2AC4-F0BD-B2318E121C0C</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -42,7 +42,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>47AA3B89-BCB0-0340-0BF3-585DB516AAB6</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

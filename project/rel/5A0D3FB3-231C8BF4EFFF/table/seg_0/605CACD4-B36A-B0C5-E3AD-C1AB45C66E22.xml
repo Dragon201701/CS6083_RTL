@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CustID" id="0BA9850B-54DD-A25A-E18C-49F65BD04833">
+<Column name="CID" id="0BA9850B-54DD-A25A-E18C-49F65BD04833">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID given to each customer]]></commentInRDBMS>
@@ -30,8 +30,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="CLName" id="AC3D780C-843F-7019-A7D2-E1C85D0984FD">
@@ -43,11 +43,11 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CPHONE" id="9C8B57A7-2000-C0B0-66CC-682727A8E953">
+<Column name="Contact" id="9C8B57A7-2000-C0B0-66CC-682727A8E953">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer's phone number]]></commentInRDBMS>
@@ -69,11 +69,11 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30 CHAR</dataTypeSize>
-<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CustID_Type" id="B9C7581F-B29F-3395-7244-37D55F195B76">
+<Column name="CID_Type" id="B9C7581F-B29F-3395-7244-37D55F195B76">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Type of Identification document. Passport or SSN or Driver License.]]></commentInRDBMS>
@@ -82,11 +82,11 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10 CHAR</dataTypeSize>
-<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="custID_Num" id="54E9EADA-0F5B-801A-7714-5BCDE8047C7D">
+<Column name="CID_Num" id="54E9EADA-0F5B-801A-7714-5BCDE8047C7D">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique number given to each ID document]]></commentInRDBMS>

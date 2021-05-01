@@ -3,7 +3,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>631A82FA-177C-D54E-F86A-C43EF0F42194</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -13,7 +13,7 @@
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique number given to each book]]></commentInRDBMS>
 <generatorID>41507371-2307-EE24-7B20-F01595828ED8</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -26,19 +26,19 @@
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[The title name of the book]]></commentInRDBMS>
 <generatorID>26C40305-EBC9-C79F-35BF-C4CE306ED351</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30 CHAR</dataTypeSize>
-<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="TopicID" id="E399261B-E5F7-21BB-90D4-69533084201E">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>BB6E3442-99D5-88E4-E670-5EDE956B6505</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -56,7 +56,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>7F526A09-7600-7145-2B85-7A4647BE489F</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -64,11 +64,11 @@
 <colUsage columnID="837F0766-6922-0D46-7810-116D1C6E709A"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="518A3008-FCA6-EE5F-820E-71CD69AB0DE4" name="ALSM_Topic_FK">
+<ind_PK_UK id="518A3008-FCA6-EE5F-820E-71CD69AB0DE4" name="ALSM_Book_ALSM_Topic_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>FEAFA6AA-9ABB-E171-E0BB-A893983F3A18</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

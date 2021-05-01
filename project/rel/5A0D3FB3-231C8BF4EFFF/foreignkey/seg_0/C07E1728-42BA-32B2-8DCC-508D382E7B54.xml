@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C07E1728-42BA-32B2-8DCC-508D382E7B54" containerWithKeyObject="B63A5B85-FC76-C4A6-CED2-D6189E54C8B5" localFKIndex="DA5B7F35-E33C-459C-92B3-BF0929F7A4C3" name="ALSM_Rentals_ALSM_Invoice_FK">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>7A35E563-7353-EDC9-BA8F-E3AFD5F787D4</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<referredTableLongName>ALSM_Invoice</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>A140E548-2A49-A2D4-F823-67DA2C309BA9</referredTableID>
+<keyObject>1CE94596-82FF-4358-3CA8-43B8C52D27EB</keyObject>
+<referredKeyID>1CE94596-82FF-4358-3CA8-43B8C52D27EB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>InvID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

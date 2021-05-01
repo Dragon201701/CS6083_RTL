@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D2613298-0007-CE23-2285-1C4563A1712E" name="ALSM_CustRegistration">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 02:34:51 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -18,7 +18,7 @@
 <Attribute name="RegID" id="5EC4929B-E9A3-7ED1-62D3-8663BBCF52B2">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 02:35:26 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -28,11 +28,11 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Event_ID" id="BD19A6C5-E88A-03FE-BFA9-01AD603E4745">
+<Attribute name="EID" id="BD19A6C5-E88A-03FE-BFA9-01AD603E4745">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 19:32:49 UTC</createdTime>
 <generatorID>9429E2B6-949B-9531-98AB-431253E86F26</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -43,11 +43,11 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="CustID" id="43B73E3D-2252-2327-E8A1-83D851B00263">
+<Attribute name="CID" id="43B73E3D-2252-2327-E8A1-83D851B00263">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 19:33:26 UTC</createdTime>
 <generatorID>62ED8F5B-2023-ECCB-E025-4F916846A5BA</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -64,9 +64,10 @@
 <identifier id="CEB17653-F8E2-304A-75D9-50158E00257C" name="CustRegistration PK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 02:35:34 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

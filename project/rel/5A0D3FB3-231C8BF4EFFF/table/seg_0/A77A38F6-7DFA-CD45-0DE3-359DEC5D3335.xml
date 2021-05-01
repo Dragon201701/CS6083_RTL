@@ -3,17 +3,17 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>D2AD107C-06EC-FB5F-711C-E1F51C1C502B</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Copy_ID" id="1473D076-7185-7D30-0281-7F19FC3B6629">
+<Column name="CopyID" id="1473D076-7185-7D30-0281-7F19FC3B6629">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique Identification number for each book copy]]></commentInRDBMS>
 <generatorID>E626964B-003B-D7A0-895C-70993BB234EC</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -25,7 +25,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>2B3F7CE7-C334-35ED-6D4F-178549108C05</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -40,15 +40,14 @@
 <Column name="Status" id="5CA8D8C5-1F92-1750-679B-40525100071A">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
-<commentInRDBMS><![CDATA[0 - on rent
-1 - avaliable]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Status of the copy. Either available or on rent.]]></commentInRDBMS>
 <generatorID>FE85F38A-B639-A8C9-DAA7-A8CE76736588</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1 CHAR</dataTypeSize>
-<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
@@ -57,7 +56,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>2C44451C-A3CE-EB3B-DA2C-9F6798F7279E</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -65,11 +64,11 @@
 <colUsage columnID="1473D076-7185-7D30-0281-7F19FC3B6629"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="09D268FB-ABAF-48BF-9DDF-7BE56BECE663" name="ALSM_BOOK_FKv1">
+<ind_PK_UK id="09D268FB-ABAF-48BF-9DDF-7BE56BECE663" name="ALSM_Book_Copy_ALSM_Book_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>AD16615A-605B-E278-EA86-0C79142C7905</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

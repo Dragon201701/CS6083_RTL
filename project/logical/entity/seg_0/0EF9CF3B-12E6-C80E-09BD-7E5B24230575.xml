@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0EF9CF3B-12E6-C80E-09BD-7E5B24230575" name="ALSM_Topic">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:23:29 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -19,7 +19,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 20:17:07 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique number to identify topics]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -29,11 +29,11 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="T_Name" id="BAB77F97-04F2-0C1B-6314-7BB1D9BAE9C6">
+<Attribute name="TName" id="BAB77F97-04F2-0C1B-6314-7BB1D9BAE9C6">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 20:22:04 UTC</createdTime>
 <commentInRDBMS><![CDATA[Topic name]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -48,9 +48,10 @@
 <identifier id="4BBE43BC-5398-A113-72F7-59AF8E056C13" name="Topic PK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 20:22:01 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

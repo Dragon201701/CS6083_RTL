@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B646D124-F96D-7549-D062-D079507BA0EB" name="ALSM_Customer">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:11:15 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -15,11 +15,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="CustID" id="1E05C479-347A-FF95-946D-94DDCD227CD1">
+<Attribute name="CID" id="1E05C479-347A-FF95-946D-94DDCD227CD1">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:11:25 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID given to each customer]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -29,11 +29,11 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="C_Fname" id="BDDFC45D-20E9-7299-3EF6-535F6E1BA121">
+<Attribute name="CFname" id="BDDFC45D-20E9-7299-3EF6-535F6E1BA121">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:12:11 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer's first name]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -43,11 +43,11 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="C_LName" id="080CAB2F-8016-5941-B976-AB70D66256C6">
+<Attribute name="CLName" id="080CAB2F-8016-5941-B976-AB70D66256C6">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:12:59 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer's Last Name]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -61,7 +61,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:13:31 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer's phone number]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -71,11 +71,11 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="C_Email" id="55323360-350C-D6C3-3C77-927A8C419134">
+<Attribute name="CEmail" id="55323360-350C-D6C3-3C77-927A8C419134">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:14:29 UTC</createdTime>
 <commentInRDBMS><![CDATA[Customer's Email ID]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -85,11 +85,11 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Type" id="1ED4CBC4-DB4F-E760-70C5-C09A2BFFBF3A">
+<Attribute name="CID_Type" id="1ED4CBC4-DB4F-E760-70C5-C09A2BFFBF3A">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:14:29 UTC</createdTime>
 <commentInRDBMS><![CDATA[Type of Identification document. Passport or SSN or Driver License.]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -99,28 +99,29 @@
 <dataTypeSize>10</dataTypeSize>
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Num" id="DC33C6E7-8B2B-D155-A8D7-C707D6CF2A71">
+<Attribute name="CID_Num" id="DC33C6E7-8B2B-D155-A8D7-C707D6CF2A71">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:19:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique number given to each ID document]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="6204B6F7-FFD6-3B89-7D6A-4C6187D7E82E" name="Customer PK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:11:42 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

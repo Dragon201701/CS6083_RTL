@@ -3,7 +3,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>861FAB75-D392-1098-E5DB-89E9F24CBDDA</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -13,7 +13,7 @@
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID number given to each sponsor]]></commentInRDBMS>
 <generatorID>F502EC69-3997-4A43-8DF3-AB339D88B3A6</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -24,12 +24,12 @@
 <colAssociation fkAssociation="7E76E1C4-0E5D-0D38-166E-0CE83D04597E" referredColumn="045F2FCF-CE7A-EA44-CC8F-C41D979758FF"/>
 </associations>
 </Column>
-<Column name="F_Name" id="BD093F83-C772-58C1-E0C1-11F05F19E5C8">
+<Column name="SFName" id="BD093F83-C772-58C1-E0C1-11F05F19E5C8">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Individual sponsor's First Name	]]></commentInRDBMS>
 <generatorID>A8A87CFA-29E7-1C3C-F5A2-C47D295F4297</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -37,12 +37,12 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="L_Name" id="77D822DC-22C7-9326-5DC4-732CDE055FB8">
+<Column name="SLName" id="77D822DC-22C7-9326-5DC4-732CDE055FB8">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Individual Sponsor's Last Name]]></commentInRDBMS>
 <generatorID>C44E22B2-9FB8-F2B1-9994-FE73CAD1D738</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -56,7 +56,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>EB6A665B-B471-7E32-3CFB-BA7C76DC8765</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -68,7 +68,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>ED98DC1E-5F76-06E0-3F1D-98CA20AC2213</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

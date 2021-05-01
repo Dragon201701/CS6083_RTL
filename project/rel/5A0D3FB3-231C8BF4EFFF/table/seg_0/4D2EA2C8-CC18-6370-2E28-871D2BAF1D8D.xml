@@ -3,7 +3,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>2F7167EF-7CFA-7316-2C22-994920A694FF</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -13,7 +13,7 @@
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID number given to each sponsor]]></commentInRDBMS>
 <generatorID>F502EC69-3997-4A43-8DF3-AB339D88B3A6</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -26,7 +26,7 @@
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Type of sponsor: organisation or individual]]></commentInRDBMS>
 <generatorID>FE7CF3C3-DD5D-BE72-BB04-06DDB9EF2F56</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <constraintName>CH_INH_ALSM_Sponsor</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -47,7 +47,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>EB6A665B-B471-7E32-3CFB-BA7C76DC8765</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>

@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F5C66C61-3644-27E8-5CE4-B2835B0BD8FF" name="ALSM_Payment">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>18380B01-9F94-FAB2-9208-DBFC5EBFFC91</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PID" id="E294F5CC-0483-35FC-3A48-561095896F15">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment ID]]></commentInRDBMS>
+<generatorID>10DE6C79-84ED-1FC0-AF5B-D26232F45050</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PDATE" id="A4018C53-94DD-AD76-139E-FA6305ECF4BB">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Date]]></commentInRDBMS>
+<generatorID>C2C9DD51-1870-7F91-8A2A-A4B998D0B3D7</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PMETHOD" id="7D688310-9967-82F7-E9B7-A530FB322C35">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Method 1 - cash 2 - credit  card 3 - debit card 4 - paypal]]></commentInRDBMS>
+<generatorID>DCEA2240-8635-5DA9-3580-0312265301DC</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PAMOUNT" id="5D01C433-406D-7504-F2C6-651CA4119D3C">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment amount in USD]]></commentInRDBMS>
+<generatorID>794E167F-129A-1EF2-1C2B-17B01BC1E6CB</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="InvID1" id="095C833D-F97E-EB4C-4DCE-3F311D1CC436">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>B7F2E2FD-55AE-C5B6-C3B7-27583758CAC9</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A0B0AB88-96E5-F0A4-1D54-2E53B3AD805D" referredColumn="25E62085-80C5-7BD8-14C2-BC4F1B51114F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9CD0B643-B290-1D92-B97C-502CCDD91B06" name="ALSM_Payment_PK">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>C77FB70A-1814-D64F-5D25-6E26F2AE0BA9</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E294F5CC-0483-35FC-3A48-561095896F15"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B736E899-A42D-94C4-FEA2-D29FA5ADCAA6" name="ALSM_Payment_ALSM_Invoice_FK">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>09E652FD-819E-B99D-9063-CCC747DA07C8</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="095C833D-F97E-EB4C-4DCE-3F311D1CC436"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

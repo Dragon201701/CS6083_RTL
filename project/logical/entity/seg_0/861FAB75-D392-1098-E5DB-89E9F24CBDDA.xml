@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="861FAB75-D392-1098-E5DB-89E9F24CBDDA" name="ALSM_Individual">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:39:53 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -16,33 +16,33 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="F_Name" id="A8A87CFA-29E7-1C3C-F5A2-C47D295F4297">
+<Attribute name="SFName" id="A8A87CFA-29E7-1C3C-F5A2-C47D295F4297">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:41:26 UTC</createdTime>
 <commentInRDBMS><![CDATA[Individual sponsor's First Name	]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="L_Name" id="C44E22B2-9FB8-F2B1-9994-FE73CAD1D738">
+<Attribute name="SLName" id="C44E22B2-9FB8-F2B1-9994-FE73CAD1D738">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 00:41:57 UTC</createdTime>
 <commentInRDBMS><![CDATA[Individual Sponsor's Last Name]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

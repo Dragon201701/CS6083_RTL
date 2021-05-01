@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="70420B17-C886-5DD2-8F56-0893B29D7CA3" containerWithKeyObject="7D794D08-6AA8-9A7A-4101-3F330DBBE09E" localFKIndex="47868F39-6F0A-505B-3DA5-CCE55C9A3113" name="ALSM_Sponsor_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="70420B17-C886-5DD2-8F56-0893B29D7CA3" containerWithKeyObject="7D794D08-6AA8-9A7A-4101-3F330DBBE09E" localFKIndex="47868F39-6F0A-505B-3DA5-CCE55C9A3113" name="ALSM_Sem_Sponsor_ALSM_Sponsor_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>77C5379B-3ED9-7AFB-EDD4-F21BF3B8233D</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <referredTableLongName>ALSM_Sponsor</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>4D2EA2C8-CC18-6370-2E28-871D2BAF1D8D</referredTableID>

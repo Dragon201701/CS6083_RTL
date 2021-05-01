@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="69D46D99-B2F0-7E70-E4A5-DDA9C27D27CD" name="ALSM_Author">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:30:48 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -19,7 +19,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:30:54 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID number for each each author]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -29,12 +29,12 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="A_FName" id="F582A855-AA11-066E-3C03-855064B651FB">
+<Attribute name="AFName" id="F582A855-AA11-066E-3C03-855064B651FB">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:31:23 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's First Name
 ]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -44,11 +44,11 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="A_LName" id="1CC9C8F4-B5B2-9EAE-E406-FE827E45FDD9">
+<Attribute name="ALName" id="1CC9C8F4-B5B2-9EAE-E406-FE827E45FDD9">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:31:55 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's Last Name]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -58,11 +58,11 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="House_No" id="BD569FE9-9607-422E-F4C6-F3384ADA9496">
+<Attribute name="House" id="BD569FE9-9607-422E-F4C6-F3384ADA9496">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:32:15 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's Residential House Number]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -76,7 +76,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:32:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's Street Address]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -90,7 +90,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:33:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's city]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -104,7 +104,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:33:27 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's living State name]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -118,7 +118,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:33:43 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's residential zipcode]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -128,11 +128,11 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="A_Email" id="D51E9509-57EC-353B-E0DB-FC9293BFD8C2">
+<Attribute name="AEmail" id="D51E9509-57EC-353B-E0DB-FC9293BFD8C2">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:35:14 UTC</createdTime>
 <commentInRDBMS><![CDATA[Author's email ID]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -147,9 +147,10 @@
 <identifier id="5062C80A-F530-A7C0-C8BD-E264D3858C95" name="Author PK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 01:31:21 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

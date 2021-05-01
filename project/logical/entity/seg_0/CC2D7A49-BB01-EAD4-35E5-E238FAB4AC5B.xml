@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CC2D7A49-BB01-EAD4-35E5-E238FAB4AC5B" name="ALSM_Aut_Invite">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 02:35:58 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -15,11 +15,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Inv_ID" id="EEF831D1-6F1E-2F34-8429-AD654D378183">
+<Attribute name="InvID" id="EEF831D1-6F1E-2F34-8429-AD654D378183">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 02:39:28 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique Invitation Identification number]]></commentInRDBMS>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -33,7 +33,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 19:24:12 UTC</createdTime>
 <generatorID>8429C178-5D2D-F84F-0D12-FED9A82B2276</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -45,11 +45,11 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Event_ID" id="20E45633-F1EF-D520-3050-2F0AF4743699">
+<Attribute name="EID" id="20E45633-F1EF-D520-3050-2F0AF4743699">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 19:31:30 UTC</createdTime>
 <generatorID>B5F4E192-7A4F-1F7B-34DF-78CF61617D9D</generatorID>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <engineerTo>
 <item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
 </engineerTo>
@@ -66,9 +66,10 @@
 <identifier id="7C1B0A5E-8B17-8A79-A062-0D102770D335" name="Aut_Invite PK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-05 02:39:45 UTC</createdTime>
-<ownerDesignName>PROJECT1</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

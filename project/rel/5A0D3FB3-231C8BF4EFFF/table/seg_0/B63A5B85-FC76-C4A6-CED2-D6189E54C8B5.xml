@@ -3,17 +3,17 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>6288339D-BD7E-6AFA-6602-4243E927F218</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Bor_ID" id="9CAA0E1F-75B8-7DE0-271C-153661A3E8A5">
+<Column name="BorID" id="9CAA0E1F-75B8-7DE0-271C-153661A3E8A5">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique ID to each borrow activity]]></commentInRDBMS>
 <generatorID>B4FC1508-84D6-F0C8-70BF-16731F621CB5</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -21,36 +21,36 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Bor_Date" id="EFF6BF30-B826-7309-4C7C-C8C31612C04B">
+<Column name="BDate" id="EFF6BF30-B826-7309-4C7C-C8C31612C04B">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[The date a copy of book was borrowed]]></commentInRDBMS>
 <generatorID>C74F15D4-E04A-F777-AA6F-BE5FEAF7EF4A</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Exp_RDate" id="A7EC4E56-7170-8F31-541A-DDAE68CF6BD7">
+<Column name="ExpRDate" id="A7EC4E56-7170-8F31-541A-DDAE68CF6BD7">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[The date a copy of book is expected to be returned]]></commentInRDBMS>
 <generatorID>9437C374-A470-1428-FA6E-04E3C19FC58E</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Act_RDate" id="18CEAE0A-8149-9D02-8297-0F22C56C4659">
+<Column name="ActRDate" id="18CEAE0A-8149-9D02-8297-0F22C56C4659">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <commentInRDBMS><![CDATA[The date a copy of book was actually returned]]></commentInRDBMS>
 <generatorID>D4C4C01D-22CE-11E4-8E05-37378819A94A</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -58,11 +58,11 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Copy_ID" id="AFF1DB37-37BD-A63E-F163-7854FC7E3F13">
+<Column name="CopyID" id="AFF1DB37-37BD-A63E-F163-7854FC7E3F13">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>03B7AD67-811B-65CB-A394-B43A67B73940</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -79,7 +79,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>B14D4DF1-3B6E-FFBD-FB07-CA50D2639F20</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -98,7 +98,7 @@
 <commentInRDBMS><![CDATA[0 - Borrowed
 1 - Returned
 2 - late]]></commentInRDBMS>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -106,13 +106,44 @@
 <ownDataTypeParameters>,1,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="status1" id="A72FA0BB-2052-AB6F-34FE-3AB6379DF386">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[0 - Borrowed
+1 - returned
+2 - late]]></commentInRDBMS>
+<generatorID>D8D0CDCF-D9CB-904A-5D7B-20CED0ECC82F</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="InvID" id="B3356D57-A62B-267F-92CA-A609FAD5B043">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>CBC84CD0-B546-63B7-CC12-6F66A7951EDE</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C07E1728-42BA-32B2-8DCC-508D382E7B54" referredColumn="25E62085-80C5-7BD8-14C2-BC4F1B51114F"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="45D253D7-9DC9-172C-CC92-152C0F8103C0" name="ALSM_Rentals_PK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:44 UTC</createdTime>
 <generatorID>FAD29FF3-4691-E495-94AC-9380D37F5314</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -120,26 +151,48 @@
 <colUsage columnID="9CAA0E1F-75B8-7DE0-271C-153661A3E8A5"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="39F409F1-7814-D11D-647D-1B42AE25AAA2" name="ALSM_Copy_FK">
+<ind_PK_UK id="4CA0AEF2-8C56-0781-BA82-005BB07964E7" name="ALSM_Rentals__IDX">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<ownerDesignName>Project</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>7A35E563-7353-EDC9-BA8F-E3AFD5F787D4</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="B3356D57-A62B-267F-92CA-A609FAD5B043"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39F409F1-7814-D11D-647D-1B42AE25AAA2" name="ALSM_Rentals_ALSM_Book_Copy_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>C13DE2FE-40BD-C1A7-0DBE-247B120DCB4D</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="AFF1DB37-37BD-A63E-F163-7854FC7E3F13"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="8747F33F-2BC5-385E-E779-FC6BC1F78807" name="ALSM_Customer_FK">
+<ind_PK_UK id="8747F33F-2BC5-385E-E779-FC6BC1F78807" name="ALSM_Rentals_ALSM_Customer_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>8462BE55-8769-11EF-25DE-A0C3D2AA0D56</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="11F8FA67-68DE-5AEC-7C7D-A89EBE1EB285"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA5B7F35-E33C-459C-92B3-BF0929F7A4C3" name="ALSM_Rentals_ALSM_Invoice_FK">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 02:02:27 UTC</createdTime>
+<generatorID>7A35E563-7353-EDC9-BA8F-E3AFD5F787D4</generatorID>
+<ownerDesignName>Project</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3356D57-A62B-267F-92CA-A609FAD5B043"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

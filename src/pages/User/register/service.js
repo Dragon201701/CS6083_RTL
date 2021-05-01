@@ -2,6 +2,7 @@ import request from 'umi-request';
 import firebase from 'firebase'
 require('firebase/auth')
 import mysql_con from '../../../../config/sql.js'
+import { couldStartTrivia } from 'typescript';
 //require('firebase/firestore');
 //import {Userdb} from '../../../../config/firebase'
 
@@ -28,7 +29,12 @@ export async function Register(params){
   var user = firebase.auth().currentUser;
   //console.log('Firestore user datebase: ', Userdb)
   if (status == 'ok'){
-    console.log(mysql_con)
+    let req = request('http://localhost:3000/api/register', {
+      method: 'POST',
+      data: params,
+    });
+    console.log('User register get req: ', req)
+    /*console.log(mysql_con)
     mysql_con.connect((err) => {
       if (err){
         console.log('Mysql error before connection at register: ', err)
@@ -40,7 +46,7 @@ export async function Register(params){
         }
         console.log('Mysql customer table value inserted! Result: ', result)
       })
-    })
+    })*/
     /*let dbregisterPromise = Userdb.doc(user.uid).set({
       name: '',
       email: user.email,

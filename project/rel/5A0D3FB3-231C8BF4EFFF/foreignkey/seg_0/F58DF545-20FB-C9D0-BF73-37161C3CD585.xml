@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F58DF545-20FB-C9D0-BF73-37161C3CD585" containerWithKeyObject="8657FFCA-ED42-3D01-408F-8D15FD68A348" localFKIndex="5706E13D-AF79-3993-4C22-1C4B0E19A05B" name="ALSM_Seminar_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F58DF545-20FB-C9D0-BF73-37161C3CD585" containerWithKeyObject="8657FFCA-ED42-3D01-408F-8D15FD68A348" localFKIndex="5706E13D-AF79-3993-4C22-1C4B0E19A05B" name="ALSM_Aut_Invite_ALSM_Seminar_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>B5F4E192-7A4F-1F7B-34DF-78CF61617D9D</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <referredTableLongName>ALSM_Seminar</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>82C88D6D-16E3-AE4E-1986-0003EB5D1651</referredTableID>
 <keyObject>89637346-6114-F24D-5AE4-2AF4B481F0D3</keyObject>
 <referredKeyID>89637346-6114-F24D-5AE4-2AF4B481F0D3</referredKeyID>
 <mandatory>false</mandatory>
-<refColNames>Event_ID</refColNames>
+<refColNames>EventID</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D0B4594F-3266-6349-A471-0B084D3B8C1C" containerWithKeyObject="A77A38F6-7DFA-CD45-0DE3-359DEC5D3335" localFKIndex="09D268FB-ABAF-48BF-9DDF-7BE56BECE663" name="ALSM_BOOK_FKv1">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D0B4594F-3266-6349-A471-0B084D3B8C1C" containerWithKeyObject="A77A38F6-7DFA-CD45-0DE3-359DEC5D3335" localFKIndex="09D268FB-ABAF-48BF-9DDF-7BE56BECE663" name="ALSM_Book_Copy_ALSM_Book_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>AD16615A-605B-E278-EA86-0C79142C7905</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <referredTableLongName>ALSM_Book</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>CCE44C7C-273C-4819-3DBA-756E3D735F22</referredTableID>

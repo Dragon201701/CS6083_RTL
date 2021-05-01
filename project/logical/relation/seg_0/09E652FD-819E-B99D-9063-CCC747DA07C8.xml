@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ALSM_INVOICE_PAYMENT" directorySegmentName="seg_0" id="09E652FD-819E-B99D-9063-CCC747DA07C8">
+<createdBy>yz-li</createdBy>
+<createdTime>2021-04-30 01:56:01 UTC</createdTime>
+<ownerDesignName>Project</ownerDesignName>
+<engineerTo>
+<item key="5A0D3FB3-738E-46D8-A660-231C8BF4EFFF" value="true"/>
+</engineerTo>
+<sourcePk>80E4FD88-3549-7B23-FBAF-230E21933BE2</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>899A387E-31A5-F55A-2269-2A783F8954DB</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>18380B01-9F94-FAB2-9208-DBFC5EBFFC91</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

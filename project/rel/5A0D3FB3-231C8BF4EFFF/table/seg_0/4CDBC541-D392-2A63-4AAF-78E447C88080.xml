@@ -3,17 +3,17 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>805D12ED-D18B-C68F-D658-45644D5A7712</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Event_ID" id="C3BA5BE0-0778-E3D5-E7E2-DDE1A8F921A3">
+<Column name="EventID" id="C3BA5BE0-0778-E3D5-E7E2-DDE1A8F921A3">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Unique Identifiaction number to each event]]></commentInRDBMS>
 <generatorID>3FF70067-FF6E-1407-A31A-A28713E66A68</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -24,12 +24,12 @@
 <colAssociation fkAssociation="7E48E09C-ED10-7EC2-E3C0-6434672364B2" referredColumn="D8FC4D76-4987-A83F-7698-65B073081892"/>
 </associations>
 </Column>
-<Column name="Exb_Expenses" id="220ED384-ED22-426F-8BF8-1F1E2ADE5732">
+<Column name="Exp_Expenses" id="220ED384-ED22-426F-8BF8-1F1E2ADE5732">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <commentInRDBMS><![CDATA[Expenses of the exhibition]]></commentInRDBMS>
 <generatorID>4C3A06CC-8EAB-E43F-9770-106190433AB5</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT043</logicalDatatype>
@@ -43,7 +43,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>E84CFCC6-608C-2AC4-F0BD-B2318E121C0C</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -55,7 +55,7 @@
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>8121BD83-F419-5DB0-E2CF-393D099C75B2</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

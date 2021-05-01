@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1C361768-04B3-D63E-8352-104F01353771" containerWithKeyObject="0F2CCDC2-C4AA-C1FC-D247-FD26284794C1" localFKIndex="4B8015FF-D5C8-0720-6FBF-FD8AFD620182" name="ALSM_StudyRoom_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1C361768-04B3-D63E-8352-104F01353771" containerWithKeyObject="0F2CCDC2-C4AA-C1FC-D247-FD26284794C1" localFKIndex="4B8015FF-D5C8-0720-6FBF-FD8AFD620182" name="ALSM_Reservation_ALSM_StudyRoom_FK">
 <createdBy>skshm</createdBy>
 <createdTime>2021-04-06 20:38:45 UTC</createdTime>
 <generatorID>5850B58C-51B2-0497-EDEA-161902803DB0</generatorID>
-<ownerDesignName>project</ownerDesignName>
+<ownerDesignName>Project</ownerDesignName>
 <referredTableLongName>ALSM_StudyRoom</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>4D317366-5488-C80D-DD18-62D553D2C774</referredTableID>
