@@ -16,22 +16,11 @@ app.use(cors())
 
 app.post('/api/register', (req, res) => {
     console.log('User register req: ', req.body)
-    mysql_con.connect((err) => {
+    mysql_con.query('show tables', function (err, result) {
         if (err) throw err;
-        console.log("User register connected.");
-        mysql_con.query('show tables', function (err, result) {
-            if (err) throw err;
-            console.log("Result: " + result);
-            res.send(result)
-            mysql_con.end()
-        });
-    })
-    /*mysql_con.end((err) => {
-        // The connection is terminated gracefully
-        // Ensures all remaining queries are executed
-        // Then sends a quit packet to the MySQL server.
-    });*/
-    
+        console.log("Result: " + result);
+        res.send(result)
+    });
 })
 app.get('/', (req, res) => {
     res.send('Hello World!')

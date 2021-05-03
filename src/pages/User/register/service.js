@@ -1,7 +1,6 @@
 import request from 'umi-request';
 import firebase from 'firebase'
 require('firebase/auth')
-import mysql_con from '../../../../config/sql.js'
 import { couldStartTrivia } from 'typescript';
 //require('firebase/firestore');
 //import {Userdb} from '../../../../config/firebase'
@@ -34,19 +33,7 @@ export async function Register(params){
       data: params,
     });
     console.log('User register get req: ', req)
-    /*console.log(mysql_con)
-    mysql_con.connect((err) => {
-      if (err){
-        console.log('Mysql error before connection at register: ', err)
-      }
-      console.log('Mysql connected at register page.')
-      mysql_con.query("insert into customers () values ()", (err, result) =>{
-        if(err) {
-          console.log("Mysql error after connection at register page: ", err)
-        }
-        console.log('Mysql customer table value inserted! Result: ', result)
-      })
-    })*/
+    
     /*let dbregisterPromise = Userdb.doc(user.uid).set({
       name: '',
       email: user.email,
@@ -70,7 +57,7 @@ export async function Register(params){
     // This must be true.
     handleCodeInApp: true,
   };
-  firebase.auth().sendSignInLinkToEmail(params.mail, actionCodeSettings)
+  /*firebase.auth().sendSignInLinkToEmail(params.mail, actionCodeSettings)
   .then(function() {
     // The link was successfully sent. Inform the user.
     // Save the email locally so you don't need to ask the user for it again
@@ -81,7 +68,7 @@ export async function Register(params){
   .catch(function(error) {
     // Some error occurred, you can inspect the code: error.code
     console.log('Send Signinlink to email ERROR: ', error)
-  });
+  });*/
   return ({
     status: status,
     currentAuthority: currentAuthority,
