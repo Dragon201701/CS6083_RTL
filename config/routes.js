@@ -28,12 +28,12 @@ export default [
       {
         name: 'register',
         path: '/user/register',
-        component: './user/register',
+        component: './User/register',
       },
       {
         name: 'register-result',
         path: '/user/register-result',
-        component: './user/register-result',
+        component: './User/register-result',
       },
       {
         component: '404',
