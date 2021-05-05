@@ -82,6 +82,12 @@ export default [
             component: './TableList',
           },
           {
+            name: 'newbook',
+            icon: 'book',
+            path: '/newbook',
+            component: './newbook',
+          },
+          {
             component: './404',
           },
         ],
