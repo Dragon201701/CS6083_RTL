@@ -8,6 +8,11 @@ const Model = {
       receiverAccount: 'test@example.com',
       receiverName: 'Alex',
       amount: '500',
+      bname: '',
+      isbn: 0,
+      copyid: 0,
+      authors: [],
+
     },
     newauthor: false,
     newbook: false,

@@ -25,6 +25,7 @@ const Step1 = (props) => {
   const onValidateForm = async () => {
     const values = await validateFields(); 
     console.log('step 1 onValidateForm get values: ', values)
+    console.log('Props: ', props)
     if (dispatch) {
       dispatch({
         type: 'formAndstepForm/saveStepFormData',

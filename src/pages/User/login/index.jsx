@@ -34,51 +34,51 @@ const Login = (props) => {
   return (
     <div className={styles.main}>
       <LoginFrom activeKey={type} onTabChange={setType} onSubmit={handleSubmit}>
-        <Tab key="account" tab="邮箱密码登录">
+        <Tab key="account" tab="email login">
           {status === 'error' && loginType === 'account' && !submitting && (
-            <LoginMessage content="邮箱或密码错误（admin/ant.design）" />
+            <LoginMessage content="email or password error（admin/ant.design）" />
           )}
 
           <UserName
             name="email"
-            placeholder="邮箱: admin or user"
+            placeholder="email: admin or user"
             rules={[
               {
                 required: true,
-                message: '请输入邮箱!',
+                message: 'Please enter email!',
               },
             ]}
           />
           <Password
             name="password"
-            placeholder="密码: ant.design"
+            placeholder="Password: ant.design"
             rules={[
               {
                 required: true,
-                message: '请输入密码！',
+                message: 'Please enter password',
               },
             ]}
           />
         </Tab>
         <div>
           <Checkbox checked={autoLogin} onChange={(e) => setAutoLogin(e.target.checked)}>
-            自动登录
+            Auto Login
           </Checkbox>
           <Link className={styles.register} to="/user/register" style={{
               float: 'right',
             }}>
-            注册账户
+            Account Register
           </Link>
           <a
             style={{
               float: 'right',
             }}
           >
-            忘记密码&nbsp;&nbsp;
+            Foreget Password?&nbsp;&nbsp;
           </a>
           
         </div>
-        <Submit loading={submitting}>登录</Submit>
+        <Submit loading={submitting}>Login</Submit>
       </LoginFrom>
     </div>
   );
