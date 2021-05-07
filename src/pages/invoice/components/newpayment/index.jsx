@@ -31,6 +31,13 @@ const getCurrentStepAndComponent = (current) => {
   }
 };
 
+const {
+  onSubmit: handleUpdate,
+  onCancel: handleUpdateModalVisible,
+  updateModalVisible,
+  values,
+} = props;
+
 const newpayment = ({ current }) => {
   const [stepComponent, setStepComponent] = useState(<Step1 />);
   const [currentStep, setCurrentStep] = useState(0);
@@ -39,13 +46,14 @@ const newpayment = ({ current }) => {
     setCurrentStep(step);
     setStepComponent(component);
   }, [current]);
+  // hidemodal={()=> handleUpdateModalVisible(false, values)}
   return (
     <PageContainer content="将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。">
       <Card bordered={false}>
         <>
           <Steps current={currentStep} className={styles.steps}>
-            <Step title="填写转账信息" />
-            <Step title="确认转账信息" />
+            <Step title="填写转账信息"/>
+            <Step title="确认转账信息"/>
             <Step title="完成" />
           </Steps>
           {stepComponent}
@@ -55,6 +63,6 @@ const newpayment = ({ current }) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  current: formAndstepForm.current,
-}))(StepForm);
+export default connect(({ payment }) => ({
+  current: payment.current,
+}))(newpayment);

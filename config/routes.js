@@ -88,6 +88,12 @@ export default [
             component: './newbook',
           },
           {
+            name: 'Invoice', 
+            icon: 'MoneyCollectOutlined',
+            path: '/invoice',
+            component: './invoice',
+          },
+          {
             component: './404',
           },
         ],

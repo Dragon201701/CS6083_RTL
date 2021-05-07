@@ -47,6 +47,7 @@ const StepForm = ({ current }) => {
   const [currentStep, setCurrentStep] = useState(0);
   useEffect(() => {
     const { step, component } = getCurrentStepAndComponent(current);
+    console.log('New book use effect called. current step: ', step)
     setCurrentStep(step);
     setStepComponent(component);
   }, [current]);

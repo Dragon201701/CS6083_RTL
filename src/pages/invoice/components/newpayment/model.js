@@ -1,6 +1,6 @@
 import { fakeSubmitForm } from './service';
 const Model = {
-  namespace: 'formAndstepForm',
+  namespace: 'payment',
   state: {
     current: 'info',
     step: {
