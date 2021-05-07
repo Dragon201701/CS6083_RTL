@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Alert, Button, Descriptions, Divider, Statistic, Input, Select } from 'antd';
+import { Form, Alert, Button, Descriptions, Divider, Statistic, Input } from 'antd';
 import { connect } from 'umi';
 import styles from './index.less';
 const formItemLayout = {
@@ -30,14 +30,14 @@ const Step2 = (props) => {
       });
       dispatch({
         type: 'formAndstepForm/saveCurrentStep',
-        payload: 'newbook',
+        payload: 'info',
       });
     }
   };
 
   const onValidateForm = async () => {
     const values = await validateFields();
-    console.log('step 2 onValidateForm get values: ', values)
+
     if (dispatch) {
       dispatch({
         type: 'formAndstepForm/submitStepForm',
@@ -46,28 +46,57 @@ const Step2 = (props) => {
     }
   };
 
-  const { payAccount, receiverAccount, receiverName, amount, isbn, bname, copyid, authors, topic } = data;
+  const { payAccount, receiverAccount, receiverName, amount } = data;
   return (
     <Form
       {...formItemLayout}
       form={form}
       layout="horizontal"
       className={styles.stepForm}
+      initialValues={{
+        password: '123456',
+      }}
     >
       <Alert
         closable
         showIcon
-        message="Plase double check and verify the above info is correct."
+        message="确认转账后，资金将直接打入对方账户，无法退回。"
         style={{
           marginBottom: 24,
         }}
       />
       <Descriptions column={1}>
-        <Descriptions.Item label="ISBN"> {isbn}</Descriptions.Item>
-        <Descriptions.Item label="Book Name"> {bname}</Descriptions.Item>
-        <Descriptions.Item label="Topic"> {topic}</Descriptions.Item>
-        <Descriptions.Item label="Copy ID"> {copyid}</Descriptions.Item>
+        <Descriptions.Item label="付款账户"> {payAccount}</Descriptions.Item>
+        <Descriptions.Item label="收款账户"> {receiverAccount}</Descriptions.Item>
+        <Descriptions.Item label="收款人姓名"> {receiverName}</Descriptions.Item>
+        <Descriptions.Item label="转账金额">
+          <Statistic value={amount} suffix="元" />
+        </Descriptions.Item>
       </Descriptions>
+      <Divider
+        style={{
+          margin: '24px 0',
+        }}
+      />
+      <Form.Item
+        label="支付密码"
+        name="password"
+        required={false}
+        rules={[
+          {
+            required: true,
+            message: '需要支付密码才能进行支付',
+          },
+        ]}
+      >
+        <Input
+          type="password"
+          autoComplete="off"
+          style={{
+            width: '80%',
+          }}
+        />
+      </Form.Item>
       <Form.Item
         style={{
           marginBottom: 8,
@@ -84,7 +113,7 @@ const Step2 = (props) => {
         }}
       >
         <Button type="primary" onClick={onValidateForm} loading={submitting}>
-          Submit
+          提交
         </Button>
         <Button
           onClick={onPrev}
@@ -92,7 +121,7 @@ const Step2 = (props) => {
             marginLeft: 8,
           }}
         >
-          Back
+          上一步
         </Button>
       </Form.Item>
     </Form>

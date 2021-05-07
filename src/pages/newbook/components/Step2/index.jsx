@@ -1,7 +1,8 @@
 import React from 'react';
-import { Form, Alert, Button, Descriptions, Divider, Statistic, Input, Select } from 'antd';
+import { Form, Button, Divider, Input, Select } from 'antd';
 import { connect } from 'umi';
 import styles from './index.less';
+const { Option } = Select;
 const formItemLayout = {
   labelCol: {
     span: 5,
@@ -11,77 +12,83 @@ const formItemLayout = {
   },
 };
 
+function gettopics(){
+  topic = request("http://localhost")
+  return topic
+}
 const Step2 = (props) => {
+  const { dispatch, data } = props;
   const [form] = Form.useForm();
-  const { data, dispatch, submitting } = props;
 
   if (!data) {
     return null;
   }
-
   const { validateFields, getFieldsValue } = form;
-
   const onPrev = () => {
     if (dispatch) {
       const values = getFieldsValue();
       dispatch({
         type: 'formAndstepForm/saveStepFormData',
-        payload: { ...data, ...values },
+        payload: { ...data, ...values},
       });
       dispatch({
         type: 'formAndstepForm/saveCurrentStep',
-        payload: 'info',
+        payload: 'newcopy',
       });
     }
   };
-
   const onValidateForm = async () => {
-    const values = await validateFields();
-    console.log('step 2 onValidateForm get values: ', values)
+    const values = await validateFields(); 
+    console.log('step 1 onValidateForm get values: ', values)
+    console.log('Props: ', props)
     if (dispatch) {
       dispatch({
-        type: 'formAndstepForm/submitStepForm',
-        payload: { ...data, ...values },
+        type: 'formAndstepForm/saveStepFormData',
+        payload: values,
+      });
+      dispatch({
+        type: 'formAndstepForm/saveCurrentStep',
+        payload: 'confirm',
       });
     }
   };
-
-  const { payAccount, receiverAccount, receiverName, amount } = data;
   return (
-    <Form
-      {...formItemLayout}
-      form={form}
-      layout="horizontal"
-      className={styles.stepForm}
-      initialValues={{
-        password: '123456',
-      }}
-    >
-      <Alert
-        closable
-        showIcon
-        message="确认转账后，资金将直接打入对方账户，无法退回。"
-        style={{
-          marginBottom: 24,
-        }}
-      />
-      <Descriptions column={1}>
-        <Descriptions.Item label="付款账户"> {payAccount}</Descriptions.Item>
-        <Descriptions.Item label="收款账户"> {receiverAccount}</Descriptions.Item>
-        <Descriptions.Item label="收款人姓名"> {receiverName}</Descriptions.Item>
-        <Descriptions.Item label="转账金额">
-          <Statistic value={amount} suffix="元" />
-        </Descriptions.Item>
-      </Descriptions>
-      <Divider
-        style={{
-          margin: '24px 0',
-        }}
-      />
-      <Form.Item label="Topic">
+    <>
+      <Form
+        {...formItemLayout}
+        form={form}
+        layout="horizontal"
+        className={styles.stepForm}
+        hideRequiredMark
+        initialValues={data}
+      >
+        <Form.Item
+          name="bname"
+          label="Book Name"
+        >
+          <Input
+            style={{
+              width: 'calc(100% - 120px)',
+            }}
+            placeholder="Book Name"
+          />
+        </Form.Item>
+        <Form.Item
+          label="ISBN"
+          name="isbn"
+          rules={[
+            {
+              required: true,
+              message: 'Please enter 10-digit ISBN',
+            },
+          ]}
+        >
+          <Input placeholder="10-digit ISBN" />
+        </Form.Item>
+         <Form.Item label="topic">
           <Input.Group compact>
             <Select
-              name="Topic"
+              name="topic"
               defaultValue="history"
               style={{
                 width: 100,
@@ -103,57 +110,45 @@ const Step2 = (props) => {
             </Form.Item>
           </Input.Group>
         </Form.Item>
-      <Form.Item
-        label="支付密码"
-        name="password"
-        required={false}
-        rules={[
-          {
-            required: true,
-            message: '需要支付密码才能进行支付',
-          },
-        ]}
-      >
-        <Input
-          type="password"
-          autoComplete="off"
-          style={{
-            width: '80%',
-          }}
-        />
-      </Form.Item>
-      <Form.Item
-        style={{
-          marginBottom: 8,
-        }}
-        wrapperCol={{
-          xs: {
-            span: 24,
-            offset: 0,
-          },
-          sm: {
-            span: formItemLayout.wrapperCol.span,
-            offset: formItemLayout.labelCol.span,
-          },
-        }}
-      >
-        <Button type="primary" onClick={onValidateForm} loading={submitting}>
-          提交
-        </Button>
-        <Button
-          onClick={onPrev}
-          style={{
-            marginLeft: 8,
+
+        <Form.Item
+          wrapperCol={{
+            xs: {
+              span: 24,
+              offset: 0,
+            },
+            sm: {
+              span: formItemLayout.wrapperCol.span,
+              offset: formItemLayout.labelCol.span,
+            },
           }}
         >
-          上一步
-        </Button>
-      </Form.Item>
-    </Form>
+          <Button onClick={onPrev}>
+            Back
+          </Button>
+          <Button type="primary" onClick={onValidateForm}>
+            Next
+          </Button>
+        </Form.Item>
+      </Form>
+      <Divider
+        style={{
+          margin: '40px 0 24px',
+        }}
+      />
+      <div className={styles.desc}>
+        <h3>Description</h3>
+        <p>
+          First check if the book is in the system by isbn. if book exist, than add a new copy and go to step 3 to verify the information.
+        </p>
+        <p>
+          If the book does not exist, go to step 2 to fill in the information. Liberian can search for authors using first name and last name or authorid. If no author exists, can add new author in a pop up(Modal) form.
+        </p>
+      </div>
+    </>
   );
 };
 
-export default connect(({ formAndstepForm, loading }) => ({
-  submitting: loading.effects['formAndstepForm/submitStepForm'],
+export default connect(({ formAndstepForm }) => ({
   data: formAndstepForm.step,
 }))(Step2);

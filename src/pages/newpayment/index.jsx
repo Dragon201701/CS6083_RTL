@@ -5,35 +5,24 @@ import { connect } from 'umi';
 import Step1 from './components/Step1';
 import Step2 from './components/Step2';
 import Step3 from './components/Step3';
-import Step4 from './components/Step4';
 import styles from './style.less';
 const { Step } = Steps;
 
 const getCurrentStepAndComponent = (current) => {
   switch (current) {
-
-    case 'newcopy':
-      return {
-        step: 0,
-        component: <Step1 />,
-      }
-    case 'newbook':
+    case 'confirm':
       return {
         step: 1,
-        component: <Step2 />,  
-      }
-    case 'confirm':
+        component: <Step2 />,
+      };
+
+    case 'result':
       return {
         step: 2,
         component: <Step3 />,
       };
 
-    case 'result':
-      return {
-        step: 3,
-        component: <Step4 />,
-      };
-
+    case 'info':
     default:
       return {
         step: 0,
@@ -42,7 +31,7 @@ const getCurrentStepAndComponent = (current) => {
   }
 };
 
-const StepForm = ({ current }) => {
+const newpayment = ({ current }) => {
   const [stepComponent, setStepComponent] = useState(<Step1 />);
   const [currentStep, setCurrentStep] = useState(0);
   useEffect(() => {
@@ -51,14 +40,13 @@ const StepForm = ({ current }) => {
     setStepComponent(component);
   }, [current]);
   return (
-    <PageContainer content="Add new copy if book exist. Otherwise enter new book inforamtion and author info if needed.">
+    <PageContainer content="将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。">
       <Card bordered={false}>
         <>
           <Steps current={currentStep} className={styles.steps}>
-            <Step title="New Copy" />
-            <Step title="New Book Info" />
-            <Step title="Confirm Copy Info" />
-            <Step title="New Copy Added" />
+            <Step title="填写转账信息" />
+            <Step title="确认转账信息" />
+            <Step title="完成" />
           </Steps>
           {stepComponent}
         </>

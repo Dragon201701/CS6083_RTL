@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Divider, Input, Select } from 'antd';
 import { connect } from 'umi';
 import styles from './index.less';
+import { ConsoleSqlOutlined } from '@ant-design/icons';
 const { Option } = Select;
 const formItemLayout = {
   labelCol: {
@@ -26,7 +27,16 @@ const Step1 = (props) => {
     const values = await validateFields(); 
     console.log('step 1 onValidateForm get values: ', values)
     console.log('Props: ', props)
-    if (dispatch) {
+    var exist = false
+    // TODO: implement check isbn if exist.
+    /*const exist = request('http://localhost:3000/api/newbook/isbn', {
+      method: 'POST',
+      data: values
+    })*/
+    console.log('Dispatch: ', dispatch)
+    console.log('Exist: ', exist)
+    if(exist){
+      console.log('Step 1 book info exist.')
       dispatch({
         type: 'formAndstepForm/saveStepFormData',
         payload: values,
@@ -35,7 +45,28 @@ const Step1 = (props) => {
         type: 'formAndstepForm/saveCurrentStep',
         payload: 'confirm',
       });
+    } else {
+      // ISBN not exist, 
+      console.log('Step 1 book info not exist.')
+      dispatch({
+        type: 'formAndstepForm/saveStepFormData',
+        payload: values,
+      });
+      dispatch({
+        type: 'formAndstepForm/saveCurrentStep',
+        payload: 'newbook',
+      });
     }
+    /*if (dispatch) {
+      dispatch({
+        type: 'formAndstepForm/saveStepFormData',
+        payload: values,
+      });
+      dispatch({
+        type: 'formAndstepForm/saveCurrentStep',
+        payload: 'confirm',
+      });
+    }*/
   };
   return (
     <>
@@ -53,11 +84,11 @@ const Step1 = (props) => {
           rules={[
             {
               required: true,
-              message: 'Please enter 13-digit ISBN',
+              message: 'Please enter 10-digit ISBN',
             },
           ]}
         >
-          <Input placeholder="13-digit ISBN" />
+          <Input placeholder="10-digit ISBN" />
         </Form.Item>
         <Form.Item
           wrapperCol={{
@@ -72,7 +103,7 @@ const Step1 = (props) => {
           }}
         >
           <Button type="primary" onClick={onValidateForm}>
-            下一步
+            Next
           </Button>
         </Form.Item>
       </Form>

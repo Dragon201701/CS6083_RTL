@@ -8,18 +8,11 @@ const Model = {
       receiverAccount: 'test@example.com',
       receiverName: 'Alex',
       amount: '500',
-      bname: '',
-      isbn: 0,
-      copyid: 0,
-      authors: [],
-      topic: '',
     },
-    newauthor: false,
-    newbook: false,
   },
   effects: {
     *submitStepForm({ payload }, { call, put }) {
-      yield call(fakeSubmitForm, payload); // TODO: replace fakeSubmitForm with newcopy
+      yield call(fakeSubmitForm, payload);
       yield put({
         type: 'saveStepFormData',
         payload,

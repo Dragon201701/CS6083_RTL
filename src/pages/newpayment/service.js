@@ -5,10 +5,3 @@ export async function fakeSubmitForm(params) {
     data: params,
   });
 }
-export async function newcopy(params) {
-  return request('http://localhost:3000/api/newbook/newcopy', {
-    method: 'POST',
-    data: params
-  })
-}
-
