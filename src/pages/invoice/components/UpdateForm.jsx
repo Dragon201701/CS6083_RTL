@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, DatePicker, Input, Modal, Radio, Select, Steps } from 'antd';
+import { Form, Button, DatePicker, Input, Modal, Radio, Select, Steps, Descriptions } from 'antd';
+import ProDescriptions from '@ant-design/pro-descriptions';
 const FormItem = Form.Item;
 const { Step } = Steps;
 const { TextArea } = Input;
@@ -16,6 +17,16 @@ const formLayout = {
 
 const UpdateForm = (props) => {
   const [formVals, setFormVals] = useState({
+    bname: props.values.bname,
+    isbn: props.values.isbn,
+    cfname: props.values.cfname,
+    clname: props.values.clname,
+    cid: props.values.cid,
+    amount: props.values.amount,
+    balance: props.values.balance,
+    status: props.values.status,
+    copyid: props.values.copyid,
+
     name: props.values.name,
     desc: props.values.desc,
     key: props.values.key,
@@ -121,33 +132,46 @@ const UpdateForm = (props) => {
 
     return (
       <>
-        <Form.Item
-          label="收款人姓名"
-          name="bname"
-          rules={[
-            {
-              required: true,
-              message: '请输入收款人姓名',
-            },
-          ]}
-        >
-          <Input placeholder="请输入收款人姓名" />
-        </Form.Item>
-        <Form.Item
-          label="转账金额"
-          name="amount"
-          rules={[
-            {
-              required: true,
-              message: '请输入转账金额',
-            },
-            {
-              pattern: /^(\d+)((?:\.\d+)?)$/,
-              message: '请输入合法金额数字',
-            },
-          ]}
-        >
-          <Input prefix="￥" placeholder="请输入金额" />
+        <ProDescriptions column={2}>
+          <ProDescriptions.Item span={2} label="Book Name">{formVals.bname}</ProDescriptions.Item>
+          <ProDescriptions.Item label="ISBN" valueType="number"> {formVals.isbn}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Copy ID" valueType="number"> {formVals.copyid}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Customer Name"> {formVals.cfname.concat(" ", formVals.clname)}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Customer ID" valueType="number"> {formVals.cid}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Invoice Amount"> {"$ "+formVals.amount}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Remaining Balance"> {"$ "+formVals.balance}</ProDescriptions.Item>
+      
+        </ProDescriptions>
+        <Form.Item label="Payment Amount">
+          <Input.Group compact>
+            <Select
+              defaultValue="cash"
+              style={{
+                width: 100,
+              }}
+            >
+              <Option value="cash">Cash</Option>
+              <Option value="card">Credit Card</Option>
+              <Option value="paypal">Paypal</Option>
+              <Option value="alipay">Alipay</Option>
+            </Select>
+            <Form.Item
+              
+              name="amount"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please enter amount',
+                },
+                {
+                  pattern: /^(\d+)((?:\.\d+)?)$/,
+                  message: 'Input is not number',
+                },
+              ]}
+            >
+              <Input prefix="$" placeholder={formVals.balance} />
+            </Form.Item>
+          </Input.Group>
         </Form.Item>
       </>
     );
@@ -163,11 +187,11 @@ const UpdateForm = (props) => {
             }}
             onClick={backward}
           >
-            上一步
+            Back
           </Button>
-          <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+          <Button onClick={() => handleUpdateModalVisible(false, values)}>Cancel</Button>
           <Button type="primary" onClick={() => handleNext()}>
-            下一步
+            Next
           </Button>
         </>
       );
@@ -182,11 +206,11 @@ const UpdateForm = (props) => {
             }}
             onClick={backward}
           >
-            上一步
+            Back
           </Button>
-          <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+          <Button onClick={() => handleUpdateModalVisible(false, values)}>Cancel</Button>
           <Button type="primary" onClick={() => handleNext()}>
-            完成
+            Complete
           </Button>
         </>
       );
@@ -194,9 +218,9 @@ const UpdateForm = (props) => {
 
     return (
       <>
-        <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+        <Button onClick={() => handleUpdateModalVisible(false, values)}>Cancel</Button>
         <Button type="primary" onClick={() => handleNext()}>
-          下一步
+          Next
         </Button>
       </>
     );
@@ -209,7 +233,7 @@ const UpdateForm = (props) => {
         padding: '32px 40px 48px',
       }}
       destroyOnClose
-      title="规则配置"
+      title="New Payment"
       visible={updateModalVisible}
       footer={renderFooter()}
       onCancel={() => handleUpdateModalVisible()}
@@ -221,9 +245,9 @@ const UpdateForm = (props) => {
         size="small"
         current={currentStep}
       >
-        <Step title="基本信息" />
-        <Step title="配置规则属性" />
-        <Step title="设定调度周期" />
+        <Step title="Copy and Customer Info" />
+        <Step title="Verify" />
+        <Step title="Payment Complete" />
       </Steps>
       <Form
         {...formLayout}
@@ -239,6 +263,10 @@ const UpdateForm = (props) => {
           isbn: formVals.isbn,
           amount: formVals.amount,
           balance: formVals.balance,
+          cfname: formVals.cfname,
+          clname: formVals.clname,
+          cid: formVals.cid,
+          copyid: formVals.copyid,
         }}
       >
         {renderContent()}

@@ -31,6 +31,7 @@ const genList = (current, pageSize) => {
     isbn: 102455648765,
     cfname: 'Tomas',
     clname: 'Pet',
+    cemail: 'tp363@gmail.com',
     cid: 12,
     copyid: 1,
     amount: 30,

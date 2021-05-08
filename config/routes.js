@@ -76,7 +76,7 @@ export default [
             ],
           },
           {
-            name: 'list.table-list',
+            name: 'Manage Copies',
             icon: 'book',
             path: '/rentbook',
             component: './TableList',
@@ -88,7 +88,7 @@ export default [
             component: './newbook',
           },
           {
-            name: 'Invoice', 
+            name: 'invoice', 
             icon: 'MoneyCollectOutlined',
             path: '/invoice',
             component: './invoice',

@@ -12,7 +12,7 @@ const Model = {
       isbn: 0,
       copyid: 0,
       authors: [],
-      topic: '',
+      newtopic: '',
     },
     newauthor: false,
     newbook: false,

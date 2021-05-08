@@ -85,7 +85,7 @@ const Step2 = (props) => {
         >
           <Input placeholder="10-digit ISBN" />
         </Form.Item>
-         <Form.Item label="topic">
+         <Form.Item label="Topic">
           <Input.Group compact>
             <Select
               name="topic"

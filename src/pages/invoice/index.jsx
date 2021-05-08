@@ -112,9 +112,13 @@ const Invoice = () => {
     {
       title: 'ISBN',
       dataIndex: 'isbn',
-      valueType: 'digit',
+      valueType: 'number',
     },
-    
+    {
+      title: 'CopyID',
+      dataIndex: 'copyid',
+      valueType: 'number',
+    },
     {
       title: 'Customer\'s First Name',
       dataIndex: 'cfname',
@@ -128,21 +132,21 @@ const Invoice = () => {
     {
       title: 'Customer\'s ID',
       dataIndex: 'cid',
-      valueType: 'digit',
+      valueType: 'number',
     },
     {
       title: 'Invoice Amount',
       dataIndex: 'amount',
       sorter: true,
       hideInForm: true,
-      renderText: (val) => `${val} USD`,
+      renderText: (val) => `$ ${val}`,
     },
     {
       title: 'Balance',
       dataIndex: 'balance',
       sorter: true,
       hideInForm: true,
-      renderText: (val) => `${val} USD`,
+      renderText: (val) => `$ ${val}`,
     },
     {
       title: 'Status',
@@ -166,18 +170,27 @@ const Invoice = () => {
       valueType: 'option',
       render: (_, record) => {
         console.log('Rendering pay invoice button. record: ', record)
-        return (
-          <>
-            <a
-              onClick={() => {
-                handleUpdateModalVisible(true);
-                setStepFormValues(record);
-              }}
-            >
-              Pay this invoice
-            </a>
-          </>
-        )
+        if(record.balance != 0)
+          return (
+            <>
+              <a
+                onClick={() => {
+                  handleUpdateModalVisible(true);
+                  setStepFormValues(record);
+                }}
+              >
+                Pay this invoice
+              </a>
+              <Divider type="vertical" />
+              <a href="">Show all payments</a>
+            </>
+          )
+        else
+          return(
+            <>
+              <a href="">Show all payments</a>
+            </>
+          )
       }
     },
   ];
