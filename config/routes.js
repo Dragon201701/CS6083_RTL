@@ -47,7 +47,7 @@ export default [
       {
         path: '/',
         component: '../layouts/BasicLayout',
-        authority: ['admin', 'user'],
+        authority: ['admin', 'employee'],
         routes: [
           {
             path: '/',
@@ -67,31 +67,42 @@ export default [
             authority: ['admin'],
             routes: [
               {
-                path: '/admin/sub-page',
-                name: 'sub-page',
+                name: 'Manage Copies',
+                icon: 'book',
+                path: '/admin/rentbook',
+                component: './TableList',
+              },
+              {
+                name: 'newbook',
+                icon: 'book',
+                path: '/admin/newbook',
+                component: './newbook',
+              },
+              {
+                name: 'Event Management',
                 icon: 'smile',
-                component: './index',
-                authority: ['admin'],
+                path: '/admin/allevents',
+                component: './allevents',
               },
             ],
           },
           {
-            name: 'Manage Copies',
+            name: 'findbook',
             icon: 'book',
-            path: '/rentbook',
-            component: './TableList',
-          },
-          {
-            name: 'newbook',
-            icon: 'book',
-            path: '/newbook',
-            component: './newbook',
+            path: '/findbook',
+            component: './findbook'
           },
           {
             name: 'invoice', 
             icon: 'MoneyCollectOutlined',
             path: '/invoice',
             component: './invoice',
+          },
+          {
+            name: 'Exhibitions', 
+            icon: 'Smile',
+            path: '/exhibitions',
+            component: './myexhibitions',
           },
           {
             component: './404',
