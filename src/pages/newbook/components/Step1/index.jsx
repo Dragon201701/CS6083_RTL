@@ -38,22 +38,22 @@ const Step1 = (props) => {
     if(exist){
       console.log('Step 1 book info exist.')
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'newcopy/saveStepFormData',
         payload: values,
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'newcopy/saveCurrentStep',
         payload: 'confirm',
       });
     } else {
       // ISBN not exist, 
       console.log('Step 1 book info not exist.')
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'newcopy/saveStepFormData',
         payload: values,
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'newcopy/saveCurrentStep',
         payload: 'newbook',
       });
     }
@@ -84,6 +84,7 @@ const Step1 = (props) => {
           rules={[
             {
               required: true,
+              len: 10,
               message: 'Please enter 10-digit ISBN',
             },
           ]}
@@ -125,6 +126,6 @@ const Step1 = (props) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  data: formAndstepForm.step,
+export default connect(({ newcopy }) => ({
+  data: newcopy.step,
 }))(Step1);

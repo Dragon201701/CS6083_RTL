@@ -63,7 +63,6 @@ export default [
             path: '/admin',
             name: 'admin',
             icon: 'crown',
-            component: './Admin',
             authority: ['admin'],
             routes: [
               {

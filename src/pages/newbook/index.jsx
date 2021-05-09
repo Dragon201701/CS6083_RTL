@@ -42,7 +42,7 @@ const getCurrentStepAndComponent = (current) => {
   }
 };
 
-const StepForm = ({ current }) => {
+const NewCopy = ({ current }) => {
   const [stepComponent, setStepComponent] = useState(<Step1 />);
   const [currentStep, setCurrentStep] = useState(0);
   useEffect(() => {
@@ -68,6 +68,6 @@ const StepForm = ({ current }) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  current: formAndstepForm.current,
-}))(StepForm);
+export default connect(({ newcopy }) => ({
+  current: newcopy.current,
+}))(NewCopy);

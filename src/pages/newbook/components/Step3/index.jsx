@@ -25,11 +25,11 @@ const Step2 = (props) => {
     if (dispatch) {
       const values = getFieldsValue();
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'newcopy/saveStepFormData',
         payload: { ...data, ...values },
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'newcopy/saveCurrentStep',
         payload: 'newbook',
       });
     }
@@ -40,7 +40,7 @@ const Step2 = (props) => {
     console.log('step 2 onValidateForm get values: ', values)
     if (dispatch) {
       dispatch({
-        type: 'formAndstepForm/submitStepForm',
+        type: 'newcopy/submitStepForm',
         payload: { ...data, ...values },
       });
     }
@@ -99,7 +99,7 @@ const Step2 = (props) => {
   );
 };
 
-export default connect(({ formAndstepForm, loading }) => ({
-  submitting: loading.effects['formAndstepForm/submitStepForm'],
-  data: formAndstepForm.step,
+export default connect(({ newcopy, loading }) => ({
+  submitting: loading.effects['newcopy/submitStepForm'],
+  data: newcopy.step,
 }))(Step2);

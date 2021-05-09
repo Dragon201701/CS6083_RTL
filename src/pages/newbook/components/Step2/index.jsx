@@ -19,7 +19,17 @@ function gettopics(){
 const Step2 = (props) => {
   const { dispatch, data } = props;
   const [form] = Form.useForm();
+  /*const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
 
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };*/
   if (!data) {
     return null;
   }
@@ -28,11 +38,11 @@ const Step2 = (props) => {
     if (dispatch) {
       const values = getFieldsValue();
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'newcopy/saveStepFormData',
         payload: { ...data, ...values},
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'newcopy/saveCurrentStep',
         payload: 'newcopy',
       });
     }
@@ -43,11 +53,11 @@ const Step2 = (props) => {
     console.log('Props: ', props)
     if (dispatch) {
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'newcopy/saveStepFormData',
         payload: values,
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'newcopy/saveCurrentStep',
         payload: 'confirm',
       });
     }
@@ -68,7 +78,7 @@ const Step2 = (props) => {
         >
           <Input
             style={{
-              width: 'calc(100% - 120px)',
+              width: 'calc(125% - 100px)',
             }}
             placeholder="Book Name"
           />
@@ -79,36 +89,27 @@ const Step2 = (props) => {
           rules={[
             {
               required: true,
+              len: 10,
               message: 'Please enter 10-digit ISBN',
             },
           ]}
         >
           <Input placeholder="10-digit ISBN" />
         </Form.Item>
-         <Form.Item label="Topic">
-          <Input.Group compact>
-            <Select
-              name="topic"
-              defaultValue="history"
-              style={{
-                width: 100,
-              }}
-            >
-              <Option value="history">History</Option>
-              <Option value="finance">Finance</Option>
-            </Select>
-            <Form.Item
-              noStyle
-              name="newTopic"
-            >
-              <Input
-                style={{
-                  width: 'calc(100% - 100px)',
-                }}
-                placeholder="other topic"
-              />
-            </Form.Item>
-          </Input.Group>
+        <Form.Item label="Topic">
+          <Select
+            showSearch
+            style={{ width: 'calc(125% - 100px)' }}
+            placeholder="type here to search"
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            <Option value="1">History</Option>
+            <Option value="2">Geography</Option>
+            <Option value="3">Economy</Option>
+          </Select>
         </Form.Item>
 
         <Form.Item
@@ -149,6 +150,6 @@ const Step2 = (props) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  data: formAndstepForm.step,
+export default connect(({ newcopy }) => ({
+  data: newcopy.step,
 }))(Step2);

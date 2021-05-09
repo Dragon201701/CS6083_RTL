@@ -55,19 +55,19 @@ const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
   </div>
 );
 
-export const BasicList = (props) => {
+export const EventList = (props) => {
   const addBtn = useRef(null);
   const {
     loading,
     dispatch,
-    listAndbasicList: { list },
+    allevents: { list },
   } = props;
   const [done, setDone] = useState(false);
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState(undefined);
   useEffect(() => {
     dispatch({
-      type: 'listAndbasicList/fetch',
+      type: 'allevents/fetch',
       payload: {
         count: 5,
       },
@@ -258,7 +258,7 @@ export const BasicList = (props) => {
     </div>
   );
 };
-export default connect(({ listAndbasicList, loading }) => ({
-  listAndbasicList,
-  loading: loading.models.listAndbasicList,
-}))(BasicList);
+export default connect(({ allevents, loading }) => ({
+  allevents,
+  loading: loading.models.allevents,
+}))(EventList);

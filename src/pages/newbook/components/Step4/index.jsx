@@ -15,7 +15,7 @@ const Step3 = (props) => {
   const onFinish = () => {
     if (dispatch) {
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'newcopy/saveCurrentStep',
         payload: 'info',
       });
     }
@@ -53,6 +53,6 @@ const Step3 = (props) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  data: formAndstepForm.step,
+export default connect(({ newcopy }) => ({
+  data: newcopy.step,
 }))(Step3);

@@ -1,6 +1,6 @@
 import { fakeSubmitForm } from './service';
 const Model = {
-  namespace: 'formAndstepForm',
+  namespace: 'newcopy',
   state: {
     current: 'info',
     step: {
@@ -9,7 +9,7 @@ const Model = {
       receiverName: 'Alex',
       amount: '500',
       bname: '',
-      isbn: 0,
+      isbn: '',
       copyid: 0,
       authors: [],
       newtopic: '',
