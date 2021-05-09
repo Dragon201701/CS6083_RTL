@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { PlusOutlined } from '@ant-design/icons';
+import { ModalForm, ProFormText, ProFormTextArea } from '@ant-design/pro-form';
 import { Form, Button, Divider, Input, Select } from 'antd';
-import { connect } from 'umi';
+import { connect, useIntl, FormattedMessage } from 'umi';
 import styles from './index.less';
 const { Option } = Select;
 const formItemLayout = {
@@ -19,7 +21,8 @@ function gettopics(){
 const Step2 = (props) => {
   const { dispatch, data } = props;
   const [form] = Form.useForm();
-  /*const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const intl = useIntl();
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -29,7 +32,7 @@ const Step2 = (props) => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
-  };*/
+  };
   if (!data) {
     return null;
   }
@@ -96,7 +99,7 @@ const Step2 = (props) => {
         >
           <Input placeholder="10-digit ISBN" />
         </Form.Item>
-        <Form.Item label="Topic">
+        <Form.Item label="Topic" name="topic">
           <Select
             showSearch
             style={{ width: 'calc(125% - 100px)' }}
@@ -110,6 +113,44 @@ const Step2 = (props) => {
             <Option value="2">Geography</Option>
             <Option value="3">Economy</Option>
           </Select>
+        </Form.Item>
+        <Form.Item label="Authors" name="authors">
+          <Input.Group compact>
+            <Select
+              mode="multiple"
+              style={{ width: '65%' }}
+              placeholder="select authors"
+              defaultValue={['china']}
+              optionLabelProp="label"
+            >
+              <Option value="china" label="China">
+                <div className="demo-option-label-item">
+                  <span role="img" aria-label="China">
+                    🇨🇳
+                  </span>
+                  China (中国)
+                </div>
+              </Option>
+              <Option value="usa" label="USA">
+                <div className="demo-option-label-item">
+                  <span role="img" aria-label="USA">
+                    🇺🇸
+                  </span>
+                  USA (美国)
+                </div>
+              </Option>
+            </Select>
+            <Button
+              type="primary"
+              key="primary"
+              style={{ width: '35%' }}
+              onClick={() => {
+                setIsModalVisible(true);
+              }}
+            >
+              <PlusOutlined /> <FormattedMessage id="pages.newcopy.newauthor.button" defaultMessage="New Author" />
+            </Button>,
+          </Input.Group>
         </Form.Item>
 
         <Form.Item
@@ -132,6 +173,122 @@ const Step2 = (props) => {
           </Button>
         </Form.Item>
       </Form>
+      <ModalForm
+        title={intl.formatMessage({
+          id: 'pages.newcopy.newauthor.button',
+          defaultMessage: 'New Author',
+        })}
+        width="400px"
+        visible={isModalVisible}
+        onVisibleChange={setIsModalVisible}
+        onFinish={async (value) => {
+          const success = await handleAdd(value);
+
+          if (success) {
+            setIsModalVisible(false);
+
+
+            if (actionRef.current) {
+              actionRef.current.reload();
+            }
+          }
+        }}
+      >
+        <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "New author's first name required"
+              ),
+            },
+          ]}
+          label="Author's First Name"
+          placeholder="First Name"
+          width="md"
+          name="afname"
+        />
+        <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "New author's last name required"
+              ),
+            },
+          ]}
+          label="Author's Lirst Name"
+          placeholder="Last Name"
+          width="md"
+          name="alname"
+        />
+         <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "Email required"
+              ),
+            },
+          ]}
+          label="Author's Email"
+          placeholder="Email Address"
+          width="md"
+          name="email"
+        />
+        <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "Street Required"
+              ),
+            },
+          ]}
+          label="Street"
+          placeholder="Street Name"
+          width="md"
+          name="street"
+        />
+        <ProFormText
+          rules={[
+            {required: false},
+          ]}
+          label="House"
+          placeholder="House/Apartment Number"
+          width="md"
+          name="house"
+        />
+        <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "City Required"
+              ),
+            },
+          ]}
+          label="City"
+          placeholder="City"
+          width="md"
+          name="city"
+        />
+        <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "State Required"
+              ),
+            },
+          ]}
+          label="State"
+          placeholder="State"
+          width="md"
+          name="state"
+        />
+
+      </ModalForm>
       <Divider
         style={{
           margin: '40px 0 24px',
