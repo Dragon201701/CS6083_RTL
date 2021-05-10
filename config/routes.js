@@ -69,7 +69,7 @@ export default [
                 name: 'Manage Copies',
                 icon: 'book',
                 path: '/admin/rentbook',
-                component: './TableList',
+                component: './rentbook',
               },
               {
                 name: 'newbook',

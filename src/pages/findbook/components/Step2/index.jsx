@@ -25,11 +25,11 @@ const Step2 = (props) => {
     if (dispatch) {
       const values = getFieldsValue();
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'findbook/saveStepFormData',
         payload: { ...data, ...values },
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'findbook/saveCurrentStep',
         payload: 'info',
       });
     }
@@ -40,7 +40,7 @@ const Step2 = (props) => {
 
     if (dispatch) {
       dispatch({
-        type: 'formAndstepForm/submitStepForm',
+        type: 'findbook/submitStepForm',
         payload: { ...data, ...values },
       });
     }
@@ -128,7 +128,7 @@ const Step2 = (props) => {
   );
 };
 
-export default connect(({ formAndstepForm, loading }) => ({
-  submitting: loading.effects['formAndstepForm/submitStepForm'],
-  data: formAndstepForm.step,
+export default connect(({ findbook, loading }) => ({
+  submitting: loading.effects['findbook/submitStepForm'],
+  data: findbook.step,
 }))(Step2);

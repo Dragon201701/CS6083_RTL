@@ -25,8 +25,7 @@ class CardList extends Component {
     const content = (
       <div className={styles.pageHeaderContent}>
         <p>
-          段落示意：蚂蚁金服务设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，
-          提供跨越设计与开发的体验解决方案。
+          Incoming featured exhibitons open to register.
         </p>
         <div className={styles.contentLink}>
           <a>
@@ -76,7 +75,7 @@ class CardList extends Component {
                     <Card
                       hoverable
                       className={styles.card}
-                      actions={[<a key="option1">操作一</a>, <a key="option2">操作二</a>]}
+                      actions={[<a key="option1">Register/Unregister</a>, <a key="option2">Details</a>]}
                     >
                       <Card.Meta
                         avatar={<img alt="" className={styles.cardAvatar} src={item.avatar} />}

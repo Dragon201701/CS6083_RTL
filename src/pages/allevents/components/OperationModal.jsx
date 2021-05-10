@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { Modal, Result, Button, Form, DatePicker, Input, Select } from 'antd';
+import { Modal, Result, Button, Form, DatePicker, Input, Select, Tabs } from 'antd';
 import styles from '../style.less';
 const { TextArea } = Input;
+const { TabPane } = Tabs;
 const formLayout = {
   labelCol: {
     span: 7,
@@ -12,7 +13,10 @@ const formLayout = {
   },
 };
 
+
 const OperationModal = (props) => {
+  const [eventtype, seteventtype] = useState(0);
+  //var eventtype = 'Exhibitons'
   const [form] = Form.useForm();
   const { done, visible, current, onDone, onCancel, onSubmit } = props;
   useEffect(() => {
@@ -25,6 +29,7 @@ const OperationModal = (props) => {
       form.setFieldsValue({
         ...current,
         createdAt: current.createdAt ? moment(current.createdAt) : null,
+        eventtype: eventtype,
       });
     }
   }, [props.current]);
@@ -35,6 +40,7 @@ const OperationModal = (props) => {
   };
 
   const handleFinish = (values) => {
+    console.log('Form value: ', values)
     if (onSubmit) {
       onSubmit(values);
     }
@@ -46,7 +52,7 @@ const OperationModal = (props) => {
         onCancel: onDone,
       }
     : {
-        okText: '保存',
+        okText: 'Save',
         onOk: handleSubmit,
         onCancel,
       };
@@ -56,11 +62,11 @@ const OperationModal = (props) => {
       return (
         <Result
           status="success"
-          title="操作成功"
-          subTitle="一系列的信息描述，很短同样也可以带标点。"
+          title="Success!"
+          subTitle="New event added to the database!"
           extra={
             <Button type="primary" onClick={onDone}>
-              知道了
+              Acknowledge
             </Button>
           }
           className={styles.formResult}
@@ -72,29 +78,29 @@ const OperationModal = (props) => {
       <Form {...formLayout} form={form} onFinish={handleFinish}>
         <Form.Item
           name="title"
-          label="任务名称"
+          label="Event Name"
           rules={[
             {
               required: true,
-              message: '请输入任务名称',
+              message: 'Please enter event name',
             },
           ]}
         >
-          <Input placeholder="请输入" />
+          <Input placeholder="Please enter..." />
         </Form.Item>
         <Form.Item
           name="createdAt"
-          label="开始时间"
+          label="Start Time"
           rules={[
             {
               required: true,
-              message: '请选择开始时间',
+              message: 'Please enter event start time',
             },
           ]}
         >
           <DatePicker
             showTime
-            placeholder="请选择"
+            placeholder="Please select"
             format="YYYY-MM-DD HH:mm:ss"
             style={{
               width: '100%',
@@ -103,30 +109,43 @@ const OperationModal = (props) => {
         </Form.Item>
         <Form.Item
           name="owner"
-          label="任务负责人"
+          label="Sponsors"
           rules={[
             {
               required: true,
-              message: '请选择任务负责人',
+              message: 'Please enter sponsors',
             },
           ]}
         >
-          <Select placeholder="请选择">
-            <Select.Option value="付晓晓">付晓晓</Select.Option>
-            <Select.Option value="周毛毛">周毛毛</Select.Option>
+          <Select placeholder="Please select">
+            <Select.Option value="CSE">CSE</Select.Option>
+            <Select.Option value="ECE">ECE</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item
           name="subDescription"
-          label="产品描述"
+          label="Event Descritpion"
           rules={[
             {
-              message: '请输入至少五个字符的产品描述！',
+              message: 'Please enter event description. Minimum of 5 characters.',
               min: 5,
             },
           ]}
         >
-          <TextArea rows={4} placeholder="请输入至少五个字符" />
+          <TextArea rows={4} placeholder="Please enter description no less than 5 characters." />
+        </Form.Item>
+        <Form.Item
+          name="eventt"
+          label="Select Event Type"
+        >
+          <Tabs defaultActiveKey="1" onChange={seteventtype}>
+            <TabPane tab="Tab 1" key="1">
+              Content of Tab Pane 1
+            </TabPane>
+            <TabPane tab="Tab 2" key="2">
+              Content of Tab Pane 2
+            </TabPane>
+          </Tabs>
         </Form.Item>
       </Form>
     );
@@ -134,7 +153,7 @@ const OperationModal = (props) => {
 
   return (
     <Modal
-      title={done ? null : `任务${current ? '编辑' : '添加'}`}
+      title={done ? null : `Event${current ? 'Edit' : 'Add'}`}
       className={styles.standardListForm}
       width={640}
       bodyStyle={

@@ -79,7 +79,7 @@ const handleRemove = async (selectedRows) => {
   }
 };
 
-const TableList = () => {
+const CopyList = () => {
   /**
    * @en-US Pop-up window of new window
    * @zh-CN 新建窗口的弹窗
@@ -109,7 +109,7 @@ const TableList = () => {
           defaultMessage="Book Name"
         />
       ),
-      dataIndex: 'name',
+      dataIndex: 'bname',
       // tip: 'The rule name is the unique key',
       render: (dom, entity) => {
         return (
@@ -132,17 +132,28 @@ const TableList = () => {
     {
       title: <FormattedMessage id="pages.bookTable.author" defaultMessage="Author" />,
       dataIndex: 'author',
-      valueType: 'textarea',
+      render: (dom, entity) => {
+        return (
+          <a
+            onClick={() => {
+              setCurrentRow(entity);
+              setShowDetail(true);
+            }}
+          >
+            {dom}
+          </a>
+        );
+      },
     },
     {
       title: <FormattedMessage id="pages.bookTable.isbn" defaultMessage="ISBN" />,
       dataIndex: 'isbn',
-      valueType: 'digit',
+      valueType: 'number',
     },
     {
       title: <FormattedMessage id="pages.bookTable.copyid" defaultMessage="Copy ID" />,
       dataIndex: 'copyid',
-      valueType: 'digit',
+      valueType: 'number',
     },
     {
       title: <FormattedMessage id="pages.bookTable.customer.fname" defaultMessage="Customer\'s First Name" />,
@@ -202,6 +213,12 @@ const TableList = () => {
           status: 'Error',
         }
       },
+    },
+    {
+      title: "Borrowed Date",
+      sorter: true,
+      dataIndex: 'updatedAt',
+      valueType: 'dateTime',
     },
     {
       title: (
@@ -418,15 +435,15 @@ const TableList = () => {
         }}
         closable={false}
       >
-        {currentRow?.name && (
+        {currentRow?.bname && (
           <ProDescriptions
             column={2}
-            title={currentRow?.name}
+            title={currentRow?.bname}
             request={async () => ({
               data: currentRow || {},
             })}
             params={{
-              id: currentRow?.name,
+              id: currentRow?.bname,
             }}
             columns={columns}
           />
@@ -436,4 +453,4 @@ const TableList = () => {
   );
 };
 
-export default TableList;
+export default CopyList;

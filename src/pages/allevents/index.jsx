@@ -39,7 +39,7 @@ const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
       <p>{owner}</p>
     </div>
     <div className={styles.listContentItem}>
-      <span>开始时间</span>
+      <span>Start Time</span>
       <p>{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p>
     </div>
     <div className={styles.listContentItem}>
@@ -92,7 +92,7 @@ export const EventList = (props) => {
 
   const deleteItem = (id) => {
     dispatch({
-      type: 'listAndbasicList/submit',
+      type: 'allevents/submit',
       payload: {
         id,
       },
@@ -103,10 +103,10 @@ export const EventList = (props) => {
     if (key === 'edit') showEditModal(currentItem);
     else if (key === 'delete') {
       Modal.confirm({
-        title: '删除任务',
-        content: '确定删除该任务吗？',
-        okText: '确认',
-        cancelText: '取消',
+        title: 'Delete Event',
+        content: 'Do you really want to delete this event？',
+        okText: 'Confirm',
+        cancelText: 'Abort',
         onOk: () => deleteItem(currentItem.id),
       });
     }
@@ -115,11 +115,11 @@ export const EventList = (props) => {
   const extraContent = (
     <div className={styles.extraContent}>
       <RadioGroup defaultValue="all">
-        <RadioButton value="all">全部</RadioButton>
-        <RadioButton value="progress">进行中</RadioButton>
-        <RadioButton value="waiting">等待中</RadioButton>
+        <RadioButton value="all">All</RadioButton>
+        <RadioButton value="progress">In Progress</RadioButton>
+        <RadioButton value="waiting">Not Started</RadioButton>
       </RadioGroup>
-      <Search className={styles.extraContentSearch} placeholder="请输入" onSearch={() => ({})} />
+      <Search className={styles.extraContentSearch} placeholder="Please enter" onSearch={() => ({})} />
     </div>
   );
 
@@ -127,13 +127,13 @@ export const EventList = (props) => {
     <Dropdown
       overlay={
         <Menu onClick={({ key }) => editAndDelete(key, item)}>
-          <Menu.Item key="edit">编辑</Menu.Item>
-          <Menu.Item key="delete">删除</Menu.Item>
+          <Menu.Item key="edit">Edit</Menu.Item>
+          <Menu.Item key="delete">Delete</Menu.Item>
         </Menu>
       }
     >
       <a>
-        更多 <DownOutlined />
+        More <DownOutlined />
       </a>
     </Dropdown>
   );
@@ -177,13 +177,13 @@ export const EventList = (props) => {
           <Card bordered={false}>
             <Row>
               <Col sm={8} xs={24}>
-                <Info title="我的待办" value="8个任务" bordered />
+                <Info title="Today" value="2 exhibitions and 1 seminar" bordered />
               </Col>
               <Col sm={8} xs={24}>
-                <Info title="本周任务平均处理时间" value="32分钟" bordered />
+                <Info title="This Week" value="3 exhibitions and 5 seminars" bordered />
               </Col>
               <Col sm={8} xs={24}>
-                <Info title="本周完成任务数" value="24个任务" />
+                <Info title="Completed this week" value="1 exhibitions and 1 seminars" />
               </Col>
             </Row>
           </Card>
@@ -191,7 +191,7 @@ export const EventList = (props) => {
           <Card
             className={styles.listCard}
             bordered={false}
-            title="基本列表"
+            title="All Events"
             style={{
               marginTop: 24,
             }}
@@ -210,7 +210,7 @@ export const EventList = (props) => {
               ref={addBtn}
             >
               <PlusOutlined />
-              添加
+              Add New Event
             </Button>
 
             <List
@@ -229,7 +229,7 @@ export const EventList = (props) => {
                         showEditModal(item);
                       }}
                     >
-                      编辑
+                      Edit
                     </a>,
                     <MoreBtn key="more" item={item} />,
                   ]}

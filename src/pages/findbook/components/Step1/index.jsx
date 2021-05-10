@@ -27,11 +27,11 @@ const Step1 = (props) => {
     
     if (dispatch) {
       dispatch({
-        type: 'formAndstepForm/saveStepFormData',
+        type: 'findbook/saveStepFormData',
         payload: values,
       });
       dispatch({
-        type: 'formAndstepForm/saveCurrentStep',
+        type: 'findbook/saveCurrentStep',
         payload: 'confirm',
       });
     }
@@ -160,6 +160,6 @@ const Step1 = (props) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  data: formAndstepForm.step,
+export default connect(({ findbook }) => ({
+  data: findbook.step,
 }))(Step1);

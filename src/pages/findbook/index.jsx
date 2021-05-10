@@ -55,6 +55,6 @@ const findbook = ({ current }) => {
   );
 };
 
-export default connect(({ formAndstepForm }) => ({
-  current: formAndstepForm.current,
+export default connect(({ findbook }) => ({
+  current: findbook.current,
 }))(findbook);
