@@ -143,7 +143,7 @@ const Register = ({ submitting, dispatch, userAndregister }) => {
   };
 
   const custid_type_options = [
-    { label: 'Driver License', value: 0}, {label: 'SSN', value: 1},  {label: 'Passport', value: 2}
+    { label: 'Driver License', value: 'DL'}, {label: 'SSN', value: 'SSN'},  {label: 'Passport', value: 'PASSPORT'}
   ]
   const custid_type_onChange = e => {
     console.log('radio4 checked', e.target.value);
@@ -304,14 +304,18 @@ const Register = ({ submitting, dispatch, userAndregister }) => {
             })}
           />
         </FormItem>
-
-        <Radio.Group
-          options={custid_type_options}
-          onChange={custid_type_onChange}
-          value={custid_type}
-          optionType="button"
-          buttonStyle="solid"
-        />
+        <FormItem
+          name="custid_type"
+        >
+          <Radio.Group
+            options={custid_type_options}
+            onChange={custid_type_onChange}
+            value={custid_type}
+            optionType="button"
+            buttonStyle="solid"
+          />
+        </FormItem>
+        
 
         <FormItem
           name="custid_num"

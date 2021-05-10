@@ -4,6 +4,7 @@ import { ModalForm, ProFormText, ProFormTextArea } from '@ant-design/pro-form';
 import { Form, Button, Divider, Input, Select } from 'antd';
 import { connect, useIntl, FormattedMessage } from 'umi';
 import styles from './index.less';
+import { newauthor } from '../../service';
 const { Option } = Select;
 const formItemLayout = {
   labelCol: {
@@ -27,12 +28,18 @@ const Step2 = (props) => {
     setIsModalVisible(true);
   };
   const handleOk = () => {
+    newauthor()
     setIsModalVisible(false);
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+  const handleAdd =(value) => {
+    console.log('Add new stuff: ', value)
+    newauthor(value)
+    setIsModalVisible(false)
+  }
   if (!data) {
     return null;
   }
@@ -286,6 +293,20 @@ const Step2 = (props) => {
           placeholder="State"
           width="md"
           name="state"
+        />
+        <ProFormText
+          rules={[
+            {
+              required: true,
+              message: (
+                "Zipcode Required"
+              ),
+            },
+          ]}
+          label="Zipcode"
+          placeholder="Zipcode"
+          width="md"
+          name="zipcode"
         />
 
       </ModalForm>

@@ -26,28 +26,28 @@ export async function Register(params){
   });
   const ret = await registerPromise
   var user = firebase.auth().currentUser;
-  //console.log('Firestore user datebase: ', Userdb)
+  console.log('Register user in the database sending params: ', params)
   if (status == 'ok'){
     let req = request('http://localhost:3000/api/register', {
       method: 'POST',
-      data: params,
-    });
-    console.log('User register get req: ', req)
-    
-    /*let dbregisterPromise = Userdb.doc(user.uid).set({
-      name: '',
-      email: user.email,
-      actcodes: [],
-      mytrees: [],
-      type: 'user',
-    })
-    .then(function() {
-      console.log("Document successfully written!");
+      data: {
+        custid: user.uid,
+        email: params.mail,
+        password: params.password,
+        cfname: params.cfname,
+        clname: params.clname,
+        phone: params.cphone,
+        cidtype: params.custid_type,
+        cidnum: params.custid_num,
+        crole: 'user',
+
+      },
+    }).then(function(response) {
+      console.log('Get response: ', response);
     })
     .catch(function(error) {
-      console.error("Error writing document: ", error);
+      console.log(error);
     });
-    const ret2 = await dbregisterPromise*/
   }
   console.log('Complete firebase Register. ret:', ret, ' Start sending emial verification.')
   var actionCodeSettings = {

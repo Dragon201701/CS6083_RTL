@@ -138,8 +138,8 @@ const UpdateForm = (props) => {
           <ProDescriptions.Item label="Copy ID" valueType="number"> {formVals.copyid}</ProDescriptions.Item>
           <ProDescriptions.Item label="Customer Name"> {formVals.cfname.concat(" ", formVals.clname)}</ProDescriptions.Item>
           <ProDescriptions.Item label="Customer ID" valueType="number"> {formVals.cid}</ProDescriptions.Item>
-          <ProDescriptions.Item label="Invoice Amount"> {"$ "+formVals.amount}</ProDescriptions.Item>
-          <ProDescriptions.Item label="Remaining Balance"> {"$ "+formVals.balance}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Invoice Amount"> $ {formVals.amount}</ProDescriptions.Item>
+          <ProDescriptions.Item label="Remaining Balance"> $ {formVals.balance}</ProDescriptions.Item>
       
         </ProDescriptions>
         <Form.Item label="Payment Amount">

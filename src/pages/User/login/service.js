@@ -34,6 +34,17 @@ export async function AccountLogin(params) {
   });
   const ret = await loginpromise
   // TODO: request('/api/currentuser')
+  let req = request('http://localhost:3000/api/currentuser', {
+      method: 'GET',
+      data: {
+        email: params.email,
+      },
+    }).then(function(response) {
+      console.log('Get response: ', response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
   if(params.email=="liualbert1@gmail.com")
     currentAuthority = 'admin'
   console.log('Complete firebase authentication. ret:', ret)

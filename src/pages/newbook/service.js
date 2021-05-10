@@ -11,4 +11,11 @@ export async function newcopy(params) {
     data: params
   })
 }
+export async function newauthor(params) {
+  console.log('New Author with params: ', params)
+  return request('http://localhost:3000/api/newauthor', {
+    method: 'POST', 
+    data: params
+  })
+}
 
