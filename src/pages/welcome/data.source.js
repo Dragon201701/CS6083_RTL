@@ -14,14 +14,21 @@ export const Banner01DataSource = {
     children: (
       <span>
         <span>
+          <br/>
+          <h1>
+            Welcome to <br/>
+          </h1>
+          <h1>
+            Read. Think. Learn.
+          </h1>
           <p>
-            欢迎来到北美留学梭梭植树系统。我们是立志要把阿拉善沙漠变成万亩绿顷的留学生们。
+           <br />
           </p>
           <p>
-            请使用本系统给您的树苗完成安家工作<br />
-          </p>
-          <p>
-            我们会将此种植信息提供给前线治沙的志愿者作为种植参考<br />
+          Database Project for CS-GY 6083 - B Spring-2021 
+          <br/>
+          Made by Albert Liu and Sakshi Mishra
+<br />
           </p>
         </span>
       </span>
@@ -31,7 +38,7 @@ export const Banner01DataSource = {
     className: 'banner0-button',
     children: (
       <span>
-        <p>登录/注册</p>
+        <p>CLICK HERE TO START</p>
       </span>
     ),
     href: '/user/login',
