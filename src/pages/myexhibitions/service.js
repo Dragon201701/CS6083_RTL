@@ -4,3 +4,10 @@ export async function queryFakeList(params) {
     params,
   });
 }
+
+export async function fakeSubmitForm(params) {
+  return request('/api/forms', {
+    method: 'POST',
+    data: params,
+  });
+}
