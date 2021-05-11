@@ -76,7 +76,7 @@ app.post('/api/newauthor', (req, res) => {
     })
   }).then((data) => {
     console.log("Adding new author with id: ", data, ' and params: ', req.body)
-    query = "insert into alsm_author (autid, a_fname, a_lname, house_no, street, city, state, zipcode, aemail), values (?, ?, ?, ?, ?, ?, ?, ?, ?);"
+    query = 'INSERT INTO ALSM_AUTHOR (`autid`, `a_fname`, `a_lname`, `house_no`, `street`, `city`, `state`, `zipcode`, `aemail`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);'
     mysql_con.query(query, [
       data,
       req.body.afname,
@@ -93,8 +93,18 @@ app.post('/api/newauthor', (req, res) => {
       res.send(req.body)
     });
   })
-  
 })
+
+app.get('/api/allauthors', (req, res) => {
+    console.log('User login req: ', req.body)
+    query = 'select autid, a_fname, a_lname from alsm_author;'
+    mysql_con.query(query, function (err, result) {
+      if (err) throw err;
+      console.log("All authors: " + result);
+      res.send(result)
+  });
+})
+
 app.post('/api/newbook/isbn', (req, res) => {
   console.log('New book isbn: ', req.body)
   isbn = 0;

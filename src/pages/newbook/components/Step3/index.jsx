@@ -67,6 +67,7 @@ const Step2 = (props) => {
         <Descriptions.Item label="Book Name"> {bname}</Descriptions.Item>
         <Descriptions.Item label="Topic"> {topic}</Descriptions.Item>
         <Descriptions.Item label="Copy ID"> {copyid}</Descriptions.Item>
+        <Descriptions.Item label="authors"> {authors.toString()}</Descriptions.Item>
       </Descriptions>
       <Form.Item
         style={{

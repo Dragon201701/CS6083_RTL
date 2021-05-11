@@ -56,6 +56,10 @@ const Step1 = (props) => {
         type: 'newcopy/saveCurrentStep',
         payload: 'newbook',
       });
+      dispatch({
+        type: 'newcopy/queryallauthors',
+        payload: { ...data},
+      });
     }
     /*if (dispatch) {
       dispatch({

@@ -4,7 +4,7 @@ import { ModalForm, ProFormText, ProFormTextArea } from '@ant-design/pro-form';
 import { Form, Button, Divider, Input, Select } from 'antd';
 import { connect, useIntl, FormattedMessage } from 'umi';
 import styles from './index.less';
-import { newauthor } from '../../service';
+import { newauthor, getallauthors } from '../../service';
 const { Option } = Select;
 const formItemLayout = {
   labelCol: {
@@ -20,6 +20,7 @@ function gettopics(){
   return topic
 }
 const Step2 = (props) => {
+  console.log("props: ", props)
   const { dispatch, data } = props;
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -38,11 +39,17 @@ const Step2 = (props) => {
   const handleAdd =(value) => {
     console.log('Add new stuff: ', value)
     newauthor(value)
+    
+    //queryallauthors(value)
     setIsModalVisible(false)
   }
   if (!data) {
     return null;
   }
+  
+  //getauthors()
+  //console.log('get author options: ', authoroptions)
+
   const { validateFields, getFieldsValue } = form;
   const onPrev = () => {
     if (dispatch) {
@@ -59,7 +66,8 @@ const Step2 = (props) => {
   };
   const onValidateForm = async () => {
     const values = await validateFields(); 
-    console.log('step 1 onValidateForm get values: ', values)
+    const authors = await getFieldsValue("authors");
+    console.log('step 2 onValidateForm get authors: ', authors)
     console.log('Props: ', props)
     if (dispatch) {
       dispatch({
@@ -127,25 +135,22 @@ const Step2 = (props) => {
               mode="multiple"
               style={{ width: '65%' }}
               placeholder="select authors"
-              defaultValue={['china']}
               optionLabelProp="label"
+              name="authors"
             >
-              <Option value="china" label="China">
-                <div className="demo-option-label-item">
-                  <span role="img" aria-label="China">
-                    🇨🇳
-                  </span>
-                  China (中国)
-                </div>
-              </Option>
-              <Option value="usa" label="USA">
-                <div className="demo-option-label-item">
-                  <span role="img" aria-label="USA">
-                    🇺🇸
-                  </span>
-                  USA (美国)
-                </div>
-              </Option>
+            {
+              data.allauthors.map(author => {
+                return (
+                <Option key={author.a_fname + " " + author.a_lname} 
+                  value={author.autid + " " + author.a_fname + " " + author.a_lname}
+                  label={author.a_fname + " " + author.a_lname}>
+                  <div className="demo-option-label-item">
+                  {author.autid}: {author.a_fname} {author.a_lname} 
+                  </div>
+                </Option>
+                )
+              })
+            }
             </Select>
             <Button
               type="primary"
@@ -190,7 +195,10 @@ const Step2 = (props) => {
         onVisibleChange={setIsModalVisible}
         onFinish={async (value) => {
           const success = await handleAdd(value);
-
+          dispatch({
+            type: 'newcopy/queryallauthors',
+            payload: { ...data},
+          });
           if (success) {
             setIsModalVisible(false);
 

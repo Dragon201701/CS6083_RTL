@@ -18,4 +18,12 @@ export async function newauthor(params) {
     data: params
   })
 }
+export async function getallauthors(){
+  var result = []
+  console.log('Service Get all authors')
+  return request('http://localhost:3000/api/allauthors', {
+      method: 'GET',
+      data: {},
+    })
+}
 

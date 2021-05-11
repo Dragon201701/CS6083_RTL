@@ -1,4 +1,4 @@
-import { fakeSubmitForm } from './service';
+import { fakeSubmitForm,  getallauthors} from './service';
 const Model = {
   namespace: 'newcopy',
   state: {
@@ -13,9 +13,9 @@ const Model = {
       copyid: 0,
       authors: [],
       newtopic: '',
+      allauthors: [],
     },
-    newauthor: false,
-    newbook: false,
+    allauthors: [],
   },
   effects: {
     *submitStepForm({ payload }, { call, put }) {
@@ -29,6 +29,14 @@ const Model = {
         payload: 'result',
       });
     },
+    *queryallauthors({ payload }, { call, put }){
+      const authorlist = yield call(getallauthors);
+      console.log('effect queryallauthors yield get: ', authorlist)
+      yield put({
+        type: 'updateallauthors',
+        payload: Array.isArray(authorlist) ? authorlist : [],
+      })
+    }
   },
   reducers: {
     saveCurrentStep(state, { payload }) {
@@ -36,7 +44,12 @@ const Model = {
     },
 
     saveStepFormData(state, { payload }) {
+      console.log('model saveStepFormData payload: ', payload)
       return { ...state, step: { ...state.step, ...payload } };
+    },
+    updateallauthors(state, { payload }) {
+      console.log('getallauthors reducers payload: ', payload)
+      return { ...state, step: { ...state.step, allauthors: payload } };
     },
   },
 };
