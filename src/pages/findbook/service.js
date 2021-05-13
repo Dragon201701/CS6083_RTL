@@ -5,3 +5,9 @@ export async function fakeSubmitForm(params) {
     data: params,
   });
 }
+export async function querybook(params) {
+  return request('http://localhost:3000/api/findbook', {
+    method: 'POST',
+    data: params
+  })
+}

@@ -10,7 +10,8 @@ import {
 } from '@ant-design/pro-form';
 import { useIntl, FormattedMessage } from 'umi';
 
-const UpdateForm = (props) => {
+const RentalForm = (props) => {
+  console.log('Rental form props: ', props)
   const intl = useIntl();
   return (
     <StepsForm
@@ -38,70 +39,47 @@ const UpdateForm = (props) => {
       }}
       onFinish={props.onSubmit}
     >
-      <StepsForm.StepForm
-        initialValues={{
-          name: props.values.name,
-          desc: props.values.desc,
-        }}
-        title={intl.formatMessage({
-          id: 'pages.searchTable.updateForm.basicConfig',
-          defaultMessage: '基本信息',
-        })}
-      >
+      <StepsForm.StepForm title="Basic Info">
         <ProFormText
-          name="name"
-          label={intl.formatMessage({
-            id: 'pages.searchTable.updateForm.ruleName.nameLabel',
-            defaultMessage: '规则名称',
-          })}
+          name="isbn"
+          label="ISBN"
           width="md"
           rules={[
             {
               required: true,
-              message: (
-                <FormattedMessage
-                  id="pages.searchTable.updateForm.ruleName.nameRules"
-                  defaultMessage="请输入规则名称！"
-                />
-              ),
+              message: "Please enter ISBN"
             },
           ]}
         />
         <ProFormTextArea
-          name="desc"
+          name="copyid"
           width="md"
-          label={intl.formatMessage({
-            id: 'pages.searchTable.updateForm.ruleDesc.descLabel',
-            defaultMessage: '规则描述',
-          })}
-          placeholder={intl.formatMessage({
-            id: 'pages.searchTable.updateForm.ruleDesc.descPlaceholder',
-            defaultMessage: '请输入至少五个字符',
-          })}
+          label="Copy ID"
+          placeholder="Copy ID"
           rules={[
             {
               required: true,
-              message: (
-                <FormattedMessage
-                  id="pages.searchTable.updateForm.ruleDesc.descRules"
-                  defaultMessage="请输入至少五个字符的规则描述！"
-                />
-              ),
-              min: 5,
+              message: "Please enter copy ID."
+            },
+          ]}
+        />
+        <ProFormTextArea
+          name="custid"
+          width="md"
+          label="Customer ID"
+          placeholder="Customer ID"
+          rules={[
+            {
+              required: true,
+              message: "Please enter customer ID."
             },
           ]}
         />
       </StepsForm.StepForm>
-      <StepsForm.StepForm
-        initialValues={{
-          target: '0',
-          template: '0',
-        }}
-        title={intl.formatMessage({
-          id: 'pages.searchTable.updateForm.ruleProps.title',
-          defaultMessage: '配置规则属性',
-        })}
-      >
+      <StepsForm.StepForm title="Confirm Info">
+        <Descriptions column={1}>
+          <Descriptions.Item label="ISBN"> {props.value}</Descriptions.Item>
+        </Descriptions>
         <ProFormSelect
           name="target"
           width="md"
@@ -190,4 +168,4 @@ const UpdateForm = (props) => {
   );
 };
 
-export default UpdateForm;
+export default RentalForm;

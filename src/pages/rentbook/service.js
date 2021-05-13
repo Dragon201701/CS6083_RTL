@@ -41,3 +41,9 @@ export async function updateRental(params){
     data: params,
   })
 }
+export async function newRental(params){
+  return request('http://localhost:3000/api/newrental', {
+    method: 'POST', 
+    data: params
+  })
+}

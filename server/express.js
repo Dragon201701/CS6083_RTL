@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser');
+//import bodyParser from 'body-parser'
 const port = 3000
 var mysql = require('mysql');
 const { SettingOutlined } = require('@ant-design/icons');
@@ -15,8 +16,12 @@ var mysql_con = mysql.createConnection({
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(bodyParser.raw());
+// For parsing application/json
+app.use(express.json());
+  
+// For parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+//app.use(bodyParser.raw());
 //var jsonParser = bodyParser.json()
 //var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -104,6 +109,14 @@ app.get('/api/allauthors', (req, res) => {
       res.send(result)
   });
 })
+app.post('/api/findbook', (req, res) => {
+  console.log('Find book by: ', req.body)
+  query = 'select * from alsm_book where isbn=?'
+  mysql_con.query(query, [req.body.isbn], (err, result) => {
+    console.log('Find book info: ' + result);
+    res.send(result)
+  })
+})
 
 app.post('/api/newbook/isbn', (req, res) => {
   console.log('New book isbn: ', req.body)
@@ -125,6 +138,40 @@ app.post('/api/newbook/isbn', (req, res) => {
     topic: topic_
   })
 })
+
+app.post('/api/newrental', (req, res) => {
+  console.log('New rental: ', req.body)
+  var newborid=1
+  const getnewborid = new Promise((resolve, reject) =>{
+    mysql_con.query('select max(autid) as maxid from alsm_author;', (err,result) => {
+      if(result) 
+        newautid = result[0].maxid+1
+      else
+        newautid=1 
+      resolve(newautid)
+    })
+  }).then((data) => {
+    console.log("Adding new author with id: ", data, ' and params: ', req.body)
+    query = 'INSERT INTO ALSM_AUTHOR (`bor_id`, `bor_date`, `exp_rdate`, `copy_id`, `custid`, `r_status`) VALUES (?, SYSDATE(), ?, ?, \'Borrowed\');'
+    mysql_con.query(query, [
+      data,
+      req.body.afname,
+      req.body.alname,
+      req.body.house,
+      req.body.street,
+      req.body.city,
+      req.body.state,
+      req.body.zipcode,
+      req.body.email
+    ], function (err, result) {
+      if (err) throw err;
+      console.log("User login sql result: " + result);
+      res.send(req.body)
+    });
+  })
+})
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })

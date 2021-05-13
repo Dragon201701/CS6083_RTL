@@ -20,12 +20,16 @@ const Step1 = (props) => {
     return null;
   }
 
-  const { validateFields } = form;
+  const { validateFields, getFieldValue } = form;
 
   const onValidateForm = async () => {
-    const values = await validateFields();
-    
+    //const values = await validateFields();
+    const values = await getFieldValue();
     if (dispatch) {
+      dispatch({
+        type: 'findbook/querybookData',
+        payload: values,
+      });
       dispatch({
         type: 'findbook/saveStepFormData',
         payload: values,
@@ -48,80 +52,16 @@ const Step1 = (props) => {
         initialValues={data}
       >
         <Form.Item
-          label="付款账户"
-          name="payAccount"
-          rules={[
-            {
-              required: true,
-              message: '请选择付款账户',
-            },
-          ]}
+          label="ISBN"
+          name="isbn"
         >
-          <Select placeholder="test@example.com">
-            <Option value="ant-design@alipay.com">ant-design@alipay.com</Option>
-          </Select>
-        </Form.Item>
-        <Form.Item label="收款账户">
-          <Input.Group compact>
-            <Select
-              defaultValue="alipay"
-              style={{
-                width: 100,
-              }}
-            >
-              <Option value="alipay">支付宝</Option>
-              <Option value="bank">银行账户</Option>
-            </Select>
-            <Form.Item
-              noStyle
-              name="receiverAccount"
-              rules={[
-                {
-                  required: true,
-                  message: '请输入收款人账户',
-                },
-                {
-                  type: 'email',
-                  message: '账户名应为邮箱格式',
-                },
-              ]}
-            >
-              <Input
-                style={{
-                  width: 'calc(100% - 100px)',
-                }}
-                placeholder="test@example.com"
-              />
-            </Form.Item>
-          </Input.Group>
+          <Input placeholder="search by 10-digit ISBN" />
         </Form.Item>
         <Form.Item
-          label="收款人姓名"
-          name="receiverName"
-          rules={[
-            {
-              required: true,
-              message: '请输入收款人姓名',
-            },
-          ]}
+          label="Book Name"
+          name="bname"
         >
-          <Input placeholder="请输入收款人姓名" />
-        </Form.Item>
-        <Form.Item
-          label="转账金额"
-          name="amount"
-          rules={[
-            {
-              required: true,
-              message: '请输入转账金额',
-            },
-            {
-              pattern: /^(\d+)((?:\.\d+)?)$/,
-              message: '请输入合法金额数字',
-            },
-          ]}
-        >
-          <Input prefix="￥" placeholder="请输入金额" />
+          <Input placeholder="Search by book name" />
         </Form.Item>
         <Form.Item
           wrapperCol={{
@@ -136,7 +76,7 @@ const Step1 = (props) => {
           }}
         >
           <Button type="primary" onClick={onValidateForm}>
-            下一步
+            Find Book
           </Button>
         </Form.Item>
       </Form>
@@ -146,14 +86,11 @@ const Step1 = (props) => {
         }}
       />
       <div className={styles.desc}>
-        <h3>说明</h3>
-        <h4>转账到支付宝账户</h4>
+        <h3>Description</h3>
+        <h4>Search book</h4>
         <p>
-          如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-        </p>
-        <h4>转账到银行卡</h4>
-        <p>
-          如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+          You can search the book using ISBN or Book Name. If the book exist, will show if copy is available or not. 
+          If the copy is not available, will show the earliest expected return date.
         </p>
       </div>
     </>

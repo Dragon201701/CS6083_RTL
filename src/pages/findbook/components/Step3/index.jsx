@@ -10,7 +10,7 @@ const Step3 = (props) => {
     return null;
   }
 
-  const { payAccount, receiverAccount, receiverName, amount } = data;
+  const { isbn, bname, topicid} = data;
 
   const onFinish = () => {
     if (dispatch) {
@@ -20,32 +20,38 @@ const Step3 = (props) => {
       });
     }
   };
-
+  const topic = {
+    1024: 'Children', 
+    1234: 'Fiction', 
+    2048: 'Science', 
+    5643: 'Travel',
+    6578: 'History',
+    7866: 'Adventure',
+    9087: 'Arts',
+    9090: 'Drama',
+  }
   const information = (
     <div className={styles.information}>
       <Descriptions column={1}>
-        <Descriptions.Item label="付款账户"> {payAccount}</Descriptions.Item>
-        <Descriptions.Item label="收款账户"> {receiverAccount}</Descriptions.Item>
-        <Descriptions.Item label="收款人姓名"> {receiverName}</Descriptions.Item>
-        <Descriptions.Item label="转账金额">
-          <Statistic value={amount} suffix="元" />
-        </Descriptions.Item>
+        <Descriptions.Item label="ISBN"> {isbn}</Descriptions.Item>
+        <Descriptions.Item label="Book Name"> {bname}</Descriptions.Item>
+        <Descriptions.Item label="Topic"> {topic[topicid]}</Descriptions.Item>
       </Descriptions>
     </div>
   );
   const extra = (
     <>
       <Button type="primary" onClick={onFinish}>
-        再转一笔
+        Find Another Book
       </Button>
-      <Button>查看账单</Button>
+      <Button>Check My Rental</Button>
     </>
   );
   return (
     <Result
       status="success"
-      title="操作成功"
-      subTitle="预计两小时内到账"
+      title="Reservation Success"
+      subTitle="Pick them up ASAP."
       extra={extra}
       className={styles.result}
     >

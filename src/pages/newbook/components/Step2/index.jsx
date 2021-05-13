@@ -124,9 +124,14 @@ const Step2 = (props) => {
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
           >
-            <Option value="1">History</Option>
-            <Option value="2">Geography</Option>
-            <Option value="3">Economy</Option>
+            <Option value="1024">Children</Option>
+            <Option value="1234">Fiction</Option>
+            <Option value="2048">Science</Option>
+            <Option value="5643">Travel</Option>
+            <Option value="6578">History</Option>
+            <Option value="7866">Adventure</Option>
+            <Option value="9087">Arts</Option>
+            <Option value="9090">Drama</Option>
           </Select>
         </Form.Item>
         <Form.Item label="Authors" name="authors">

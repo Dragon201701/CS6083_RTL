@@ -44,9 +44,9 @@ const findbook = ({ current }) => {
       <Card bordered={false}>
         <>
           <Steps current={currentStep} className={styles.steps}>
-            <Step title="填写转账信息" />
-            <Step title="确认转账信息" />
-            <Step title="完成" />
+            <Step title="Book Info" />
+            <Step title="Confirm" />
+            <Step title="Complete" />
           </Steps>
           {stepComponent}
         </>

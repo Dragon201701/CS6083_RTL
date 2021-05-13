@@ -1,5 +1,6 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, message, Input, Drawer } from 'antd';
+import { Button, message, Input, Drawer, DatePicker} from 'antd';
+import moment from 'moment';
 import React, { useState, useRef } from 'react';
 import { useIntl, FormattedMessage } from 'umi';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
@@ -7,25 +8,26 @@ import ProTable from '@ant-design/pro-table';
 import { ModalForm, ProFormText, ProFormTextArea } from '@ant-design/pro-form';
 import ProDescriptions from '@ant-design/pro-descriptions';
 import UpdateForm from './components/UpdateForm';
-import { queryRule, updateRule, addRule, removeRule } from './service';
+import RentalForm from './components/RentalForm';
+import { queryRule, updateRule, addRule, removeRule, newRental } from './service';
 /**
  * @en-US Add node
  * @zh-CN 添加节点
  * @param fields
  */
-
-const handleAdd = async (fields) => {
+const dateFormat = 'YYYY/MM/DD';
+const handleNewRental = async (fields) => {
   const hide = message.loading('Adding');
 
   try {
-    await addRule({ ...fields });
+    await newRental({ ...fields });
     hide();
-    message.success('Return Completed!');
+    message.success('New Rental added to database!');
     return true;
   } catch (error) {
     hide();
-    console.log("New return error: ", error)
-    message.error('Return failed, please try again!');
+    console.log("New rental error: ", error)
+    message.error('Rental failed, please try again!');
     return false;
   }
 };
@@ -79,6 +81,10 @@ const handleRemove = async (selectedRows) => {
   }
 };
 
+const handleReturnFormSubmit = async(values) =>{
+  console.log("Handle return form submit. Values: ", values)
+
+}
 const CopyList = () => {
   /**
    * @en-US Pop-up window of new window
@@ -89,7 +95,7 @@ const CopyList = () => {
    * @en-US The pop-up window of the distribution update window
    * @zh-CN 分布更新窗口的弹窗
    * */
-
+  const [rentalModalVisible, handlerentalModalVisible] = useState(false);
   const [updateModalVisible, handleUpdateModalVisible] = useState(false);
   const [showDetail, setShowDetail] = useState(false);
   const actionRef = useRef();
@@ -124,11 +130,6 @@ const CopyList = () => {
         );
       },
     },
-    /*{
-      title: <FormattedMessage id="pages.searchTable.titleDesc" defaultMessage="Description" />,
-      dataIndex: 'desc',
-      valueType: 'textarea',
-    },*/
     {
       title: <FormattedMessage id="pages.bookTable.author" defaultMessage="Author" />,
       dataIndex: 'author',
@@ -170,22 +171,6 @@ const CopyList = () => {
       dataIndex: 'cemail',
       valueType: 'textarea',
     },
-    /*{
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.titleCallNo"
-          defaultMessage="Number of service calls"
-        />
-      ),
-      dataIndex: 'callNo',
-      sorter: true,
-      hideInForm: true,
-      renderText: (val) =>
-        `${val}${intl.formatMessage({
-          id: 'pages.searchTable.tenThousand',
-          defaultMessage: ' 万 ',
-        })}`,
-    },*/
     {
       title: <FormattedMessage id="pages.searchTable.titleStatus" defaultMessage="Status" />,
       dataIndex: 'status',
@@ -265,13 +250,10 @@ const CopyList = () => {
             setCurrentRow(record);
           }}
         >
-          <FormattedMessage id="pages.searchTable.config" defaultMessage="Configuration" />
+          Return
         </a>,
         <a key="subscribeAlert" href="https://procomponents.ant.design/">
-          <FormattedMessage
-            id="pages.searchTable.subscribeAlert"
-            defaultMessage="Subscribe to alerts"
-          />
+          Send an Remainder
         </a>,
       ],
     },
@@ -296,7 +278,7 @@ const CopyList = () => {
               handleModalVisible(true);
             }}
           >
-            <PlusOutlined /> <FormattedMessage id="pages.bookTable.newreturn.msg" defaultMessage="New Return" />
+            <PlusOutlined /> New Rental
           </Button>,
         ]}
         request={(params, sorter, filter) => queryRule({ ...params, sorter, filter })}
@@ -361,7 +343,7 @@ const CopyList = () => {
         visible={createModalVisible}
         onVisibleChange={handleModalVisible}
         onFinish={async (value) => {
-          const success = await handleAdd(value);
+          const success = await handleNewRental(value);
 
           if (success) {
             handleModalVisible(false);
@@ -402,8 +384,18 @@ const CopyList = () => {
             },
           ]
         }
-        name="copy" label="Copy ID" placeholder="2 digit copy ID"/>
-
+        name="copy_id" label="Copy ID" placeholder="2 digit copy ID"/>
+        <ProFormText width="md" rules={[
+            {
+              required: true,
+              message: (
+                "Customer ID required!"
+              ),
+            },
+          ]
+        }
+        name="custid" label="Customer ID" placeholder="Customer ID"/>
+        <DatePicker label = "Expected Return Date" name="exp_rdate" defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />
       </ModalForm>
       <UpdateForm
         onSubmit={async (value) => {
@@ -425,7 +417,6 @@ const CopyList = () => {
         updateModalVisible={updateModalVisible}
         values={currentRow || {}}
       />
-
       <Drawer
         width={600}
         visible={showDetail}
